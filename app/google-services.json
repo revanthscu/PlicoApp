@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1024773503634",
+    "project_id": "plico-23e38",
+    "storage_bucket": "plico-23e38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024773503634:android:35c0927f371e52b6da444b",
+        "android_client_info": {
+          "package_name": "com.example.plicoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024773503634-5p7g2aaoke993tflikvsbiaah47pgdd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_e93ADGkOxituNM16tcr-i6V9WnTWcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024773503634-5p7g2aaoke993tflikvsbiaah47pgdd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
