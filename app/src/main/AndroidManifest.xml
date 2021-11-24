@@ -18,6 +18,15 @@
         <activity android:name=".Chat.ChatActivity">
 
         </activity>
+        <activity android:name=".VerificationActivity" />
+        <activity android:name=".BirthdayActivity"/>
+        <activity android:name=".EditProfileActivity"/>
+        <activity android:name=".GenderActivity"/>
+        <activity android:name=".MyProfileActivity" />
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".TermsActivity"/>
+        <activity android:name=".ViewOtherUserProfileActivity"/>
+
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />

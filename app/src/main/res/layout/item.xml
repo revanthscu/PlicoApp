@@ -4,12 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:clipToPadding="false"
     android:outlineProvider="bounds"
     android:paddingLeft="10sp"
     android:paddingRight="10sp"
-    android:paddingBottom="10sp">
+    android:paddingBottom="10sp"
+    tools:context=".Matching.MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -93,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:background="@color/white"
-                    android:onClick="checkInfo"
+                    android:onClick="MoreInfo"
                     android:src="@drawable/ic_info" />
 
             </LinearLayout>

@@ -18,7 +18,9 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.MyProfileActivity;
 import com.example.plicoapp.R;
+import com.example.plicoapp.ViewOtherUserProfileActivity;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
@@ -168,6 +170,8 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(mContext, MyProfileActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -236,6 +240,11 @@ public class MainActivity extends Activity {
 
     public void toChat(View view) {
         Intent i = new Intent(MainActivity.this, ChatActivity.class);
+        startActivity(i);
+    }
+
+    public void MoreInfo(View view) {
+        Intent i = new Intent(this, ViewOtherUserProfileActivity.class);
         startActivity(i);
     }
 }
