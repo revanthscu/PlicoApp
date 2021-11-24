@@ -4,11 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".EditProfileActivity">
-
+    android:orientation="vertical">
     <include layout="@layout/layout_top_navigation_back" />
 
     <ScrollView
@@ -52,7 +49,6 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
-                                    android:id="@+id/txtOne"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"
@@ -75,7 +71,6 @@
                                     android:elevation="@dimen/_5dp">
 
                                     <Button
-                                        android:id="@+id/btnOne"
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:background="@drawable/ic_add_circle_black_24dp"
@@ -103,7 +98,6 @@
                                     android:layout_height="match_parent">
 
                                     <TextView
-                                        android:id="@+id/txtTwo"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_centerInParent="true"
@@ -125,7 +119,6 @@
                                         android:elevation="@dimen/_5dp">
 
                                         <Button
-                                            android:id="@+id/btnTwo"
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
                                             android:background="@drawable/ic_add_circle_black_24dp"
@@ -146,7 +139,6 @@
                                     android:layout_height="match_parent">
 
                                     <TextView
-                                        android:id="@+id/txtThree"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_centerInParent="true"
@@ -168,7 +160,6 @@
                                         android:elevation="@dimen/_5dp">
 
                                         <Button
-                                            android:id="@+id/btnThree"
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
                                             android:background="@drawable/ic_add_circle_black_24dp"
@@ -198,7 +189,6 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
-                                    android:id="@+id/txtFour"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"
@@ -220,7 +210,6 @@
                                     android:elevation="@dimen/_5dp">
 
                                     <Button
-                                        android:id="@+id/btnFour"
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:background="@drawable/ic_add_circle_black_24dp"
@@ -265,7 +254,6 @@
                                     android:elevation="@dimen/_5dp">
 
                                     <Button
-                                        android:id="@+id/btnFive"
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:background="@drawable/ic_add_circle_black_24dp"
@@ -287,7 +275,6 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
-                                    android:id="@+id/txtSix"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"
@@ -309,7 +296,6 @@
                                     android:elevation="@dimen/_5dp">
 
                                     <Button
-                                        android:id="@+id/btnSix"
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:background="@drawable/ic_add_circle_black_24dp"
@@ -328,7 +314,6 @@
                     android:paddingRight="10dp">
 
                     <TextView
-                        android:id="@+id/txtAbout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -337,33 +322,19 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/etAbout"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:background="@android:color/transparent"
                         android:gravity="bottom"
                         android:hint="Write something about you" />
 
-                    <TextView
-                        android:id="@+id/txtInterest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Interests"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/colorAccent" />
 
                     <TextView
-                        android:id="@+id/txtInterests"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Show interests from database. clickable"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/txtJob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -372,7 +343,6 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/etJob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
@@ -387,7 +357,6 @@
                         android:background="@color/colorAccent" />
 
                     <TextView
-                        android:id="@+id/txtCompany"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -396,7 +365,6 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/etCompany"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
@@ -411,7 +379,6 @@
                         android:background="@color/colorAccent" />
 
                     <TextView
-                        android:id="@+id/txtSchool"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -420,7 +387,6 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/etSchool"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
@@ -435,7 +401,6 @@
                         android:background="@color/colorAccent" />
 
                     <TextView
-                        android:id="@+id/txtGender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -452,22 +417,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_margin="8dp"
                             android:text="Man"
+                            android:textColor="@color/colorAccent"
                             android:textSize="18dp" />
 
-                        <ImageButton
+                        <Button
                             android:id="@+id/man_button"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true" />
-
-
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/ic_check_select" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -483,37 +445,17 @@
                             android:text="Woman"
                             android:textSize="18dp" />
 
-                        <ImageButton
+                        <Button
                             android:id="@+id/woman_button"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            />
+                            android:background="@drawable/ic_check_unselect"
+                            android:visibility="visible" />
                     </RelativeLayout>
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/other_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_margin="8dp"
-                            android:text="Others"
-                            android:textSize="18dp" />
-
-                        <ImageButton
-                            android:id="@+id/others_btn"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            />
-                    </RelativeLayout>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -533,7 +475,6 @@
                             android:textSize="18dp" />
 
                         <androidx.appcompat.widget.SwitchCompat
-                            android:id="@+id/switchAge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -561,7 +502,6 @@
                             android:textSize="18dp" />
 
                         <androidx.appcompat.widget.SwitchCompat
-                           android:id="@+id/switchDist"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
