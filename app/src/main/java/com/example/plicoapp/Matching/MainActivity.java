@@ -17,6 +17,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.plicoapp.Chat.ChatActivity;
 import com.example.plicoapp.R;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
@@ -233,4 +234,8 @@ public class MainActivity extends Activity {
     }
 
 
+    public void toChat(View view) {
+        Intent i = new Intent(MainActivity.this, ChatActivity.class);
+        startActivity(i);
+    }
 }

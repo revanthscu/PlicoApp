@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Matching.MainActivity">
 
     <include layout="@layout/layout_top_navigation_view" />
 
@@ -82,6 +83,7 @@
                         android:background="@drawable/round_button_with_border"
                         android:elevation="7dp"
                         android:padding="10dp"
+                        android:onClick="toChat"
                         android:src="@drawable/ic_comment" />
 
 
