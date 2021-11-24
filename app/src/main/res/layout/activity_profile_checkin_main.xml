@@ -28,17 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
-                <com.quintus.labs.datingapp.Utils.SquareImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="Click to change profile photo"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/monkey" />
-
                 <Button
                     android:layout_width="40dp"
                     android:layout_height="40dp"

@@ -5,13 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MyProfileActivity">
     <!-- top navigation -->
-    <include layout="@layout/layout_top_navigation_view" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <include layout="@layout/layout_top_navigation_back" />
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/profile_bg"
@@ -28,22 +29,22 @@
             android:orientation="vertical">
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circle_profile_image"
-                    android:layout_width="151dp"
-                    android:layout_height="161dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="59dp"
-                    android:src="@drawable/monkey"
-                    app:civ_border_color="@color/transparentPink"
-                    app:civ_border_width="2dp" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_profile_image"
+                android:layout_width="151dp"
+                android:layout_height="161dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="59dp"
+                android:src="@drawable/default_man"
+                app:civ_border_color="@color/transparentPink"
+                app:civ_border_width="2dp" />
 
             <TextView
                 android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Santosh Kumar"
+                android:text="FName LName"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -61,7 +62,7 @@
                     android:layout_marginRight="30dp"
                     android:background="@drawable/circle_background"
                     android:gravity="center"
-                    android:onClick="Edit_Profile"
+                    android:onClick="editProfile"
                     android:padding="15dp"
                     android:src="@drawable/ic_edit"
                     tools:ignore="NotSibling" />
@@ -86,7 +87,9 @@
                     android:background="@drawable/circle_background"
                     android:gravity="center"
                     android:padding="15dp"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/ic_settings"
+                    android:clickable="true"
+                    android:onClick="gotoSettings"/>
             </LinearLayout>
 
 
