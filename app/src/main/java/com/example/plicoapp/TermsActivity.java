@@ -31,7 +31,7 @@ public class TermsActivity extends AppCompatActivity {
 
     public void submit(View view){
 
-        Intent intent = new Intent(this, VerificationActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         intent.putExtra("name", name);
         this.startActivity(intent);
     }

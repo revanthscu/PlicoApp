@@ -47,8 +47,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="40dp"
-                    android:text="Love Dating"
-                    android:textColor="#ff0b00"
+                    android:text="Plico"
+                    android:textColor="#0f7cf1"
                     android:textSize="30dp" />
 
             </RelativeLayout>

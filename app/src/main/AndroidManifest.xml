@@ -15,6 +15,18 @@
         <activity android:name=".Matching.BtnDislikeActivity"/>
         <activity android:name=".Matching.BtnLikeActivity"/>
         <activity android:name=".Matching.ProfileCheckinMain"/>
+        <activity android:name=".Chat.ChatActivity">
+
+        </activity>
+        <activity android:name=".VerificationActivity" />
+        <activity android:name=".BirthdayActivity"/>
+        <activity android:name=".EditProfileActivity"/>
+        <activity android:name=".GenderActivity"/>
+        <activity android:name=".MyProfileActivity" />
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".TermsActivity"/>
+        <activity android:name=".ViewOtherUserProfileActivity"/>
+
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
@@ -27,6 +39,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:enabled="true" android:name=".Chat.FirebaseBackgroundService" />
+
     </application>
 
 </manifest>

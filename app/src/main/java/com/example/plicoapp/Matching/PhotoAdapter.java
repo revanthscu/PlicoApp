@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.example.plicoapp.R;
+import com.example.plicoapp.ViewOtherUserProfileActivity;
 
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class PhotoAdapter extends ArrayAdapter<Cards> {
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 Intent intent = new Intent(mContext, ProfileCheckinMain.class);
                 intent.putExtra("name", card_item.getName() + ", " + card_item.getAge());
                 intent.putExtra("photo", card_item.getProfileImageUrl());
@@ -48,6 +50,11 @@ public class PhotoAdapter extends ArrayAdapter<Cards> {
                 intent.putExtra("interest", card_item.getInterest());
                 intent.putExtra("distance", card_item.getDistance());
                 mContext.startActivity(intent);
+
+                 */
+
+                Intent i = new Intent(mContext, ViewOtherUserProfileActivity.class);
+                mContext.startActivity(i);
             }
         });
 
