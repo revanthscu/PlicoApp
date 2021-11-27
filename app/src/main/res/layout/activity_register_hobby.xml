@@ -3,7 +3,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".HobbyActivity">
 
     <TextView
         android:id="@+id/numberOfPagesLeft"
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="40dp"
-            android:text="Love Dating"
+            android:text="Plico"
             android:textColor="#ff0b00"
             android:textSize="30dp" />
 
@@ -78,7 +80,8 @@
                 android:text="SPORTS"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="Sport"/>
 
             <Button
                 android:id="@+id/travelSelectionButton"
@@ -93,7 +96,8 @@
                 android:text="TRAVEL"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="travel"/>
 
         </LinearLayout>
 
@@ -114,7 +118,8 @@
                 android:text="MUSIC"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="music"/>
 
             <Button
                 android:id="@+id/fishingSelectionButton"
@@ -126,12 +131,128 @@
                 android:layout_weight="1"
                 android:background="#ff4081"
                 android:elevation="24dp"
-                android:text="Fishing"
+                android:text="FOOD"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="fish"/>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/TVSelectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="#ff4081"
+                android:elevation="24dp"
+                android:text="TV SHOWS"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:onClick="tv"/>
+
+            <Button
+                android:id="@+id/MoviesSelectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:background="#ff4081"
+                android:elevation="24dp"
+                android:text="APP DEV"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:onClick="movies"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/DanceSelectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="#ff4081"
+                android:elevation="24dp"
+                android:text="EATING"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:onClick="eat"/>
+
+            <Button
+                android:id="@+id/HikeSelectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:background="#ff4081"
+                android:elevation="24dp"
+                android:text="HIKING"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:onClick="hike"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/CodeSelectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="#ff4081"
+                android:elevation="24dp"
+                android:text="CODING"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:onClick="Code"/>
+
+            <Button
+                android:id="@+id/appDevSelectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:background="#ff4081"
+                android:elevation="24dp"
+                android:text="MOVIES"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:onClick="appdev"/>
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/hobbiesContinueButton"

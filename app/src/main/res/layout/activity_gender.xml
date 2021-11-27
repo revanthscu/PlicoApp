@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/rounded_corner_layout"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp">
-<TextView
+    android:paddingRight="16dp"
+    tools:context=".GenderActivity">
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="What is your Gender ?"
@@ -21,9 +23,36 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:onClick="toggle"
         android:hint="male"/>
     <RadioButton
         android:id="@+id/rb_female"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="female"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is your preferred Gender ?"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
+    <RadioButton
+        android:id="@+id/rb_male2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="toggle2"
+        android:hint="male"/>
+    <RadioButton
+        android:id="@+id/rb_female2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"

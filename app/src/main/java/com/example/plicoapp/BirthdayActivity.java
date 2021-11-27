@@ -20,21 +20,27 @@ public class BirthdayActivity extends AppCompatActivity{
 
     EditText et_date;
 
+    Bundle bundle;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_birthday);
+
+        bundle = getIntent().getExtras();
 
         et_date = findViewById(R.id.date);
 
     }
 
     public void submit(View view) {
-        String date = et_date.getText().toString();
+        String date = et_date.getText().toString().trim();
+
+        bundle.putString("DATE", date);
 
 
         Intent intent = new Intent(this, GenderActivity.class);
-        intent.putExtra("date",date);
+        intent.putExtras(bundle);
         this.startActivity(intent);
     }
 
