@@ -12,17 +12,17 @@
     tools:context=".Chat.ChatActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:clickable="true"
         android:src="@drawable/send"
-        android:id="@+id/fab"
+        android:backgroundTint="@color/logocolor"
         android:tint="@android:color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        app:fabSize="mini"
-        android:layout_alignParentRight="true"
-        >
+        app:fabSize="mini">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

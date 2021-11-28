@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
     <TextView
         android:id="@+id/numberOfPagesLeft"
@@ -13,7 +14,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="24dp"
         android:text="1/5"
-        android:textColor="#747474"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -46,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="60dp"
                     android:text="Plico"
                     android:textColor="#0f7cf1"
                     android:textSize="30dp" />
@@ -67,11 +68,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="60dp"
                     android:layout_marginBottom="20dp"
                     android:text="Hey, lets get started!!!"
-                    android:textColor="#747474"
-                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -79,33 +80,17 @@
                     android:layout_height="70dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:gravity="bottom">
+                    android:gravity="bottom"
+                    app:boxBackgroundMode="none">
 
                     <EditText
                         android:id="@+id/input_email"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_text_focused_bg"
-                        android:hint="entry your Email"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Enter your Email"
                         android:inputType="textEmailAddress"
-                        android:padding="15dp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="bottom">
-
-                    <EditText
-                        android:id="@+id/input_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_text_focused_bg"
-                        android:hint="enter your username "
-                        android:inputType="textEmailAddress"
-                        android:padding="15dp" />
+                        android:padding="5dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -114,16 +99,35 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:gravity="bottom"
+                    app:boxBackgroundMode="none">
+
+                    <EditText
+                        android:id="@+id/input_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Enter your Username "
+                        android:inputType="textEmailAddress"
+                        android:padding="5dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="bottom"
+                    app:boxBackgroundMode="none"
                     app:passwordToggleEnabled="true">
 
                     <EditText
                         android:id="@+id/input_password"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_text_focused_bg"
-                        android:hint="enter your Password"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Enter your Password"
                         android:inputType="textPassword"
-                        android:padding="15dp" />
+                        android:padding="5dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -133,10 +137,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:layout_marginBottom="25dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/white_rounded_button"
+                    android:onClick="onLoginClicked"
                     android:padding="12dp"
                     android:text="Continue"
-                    android:onClick="onLoginClicked"
                     android:textColor="@color/white"
                     tools:targetApi="lollipop" />
 
@@ -150,7 +154,8 @@
                 android:layout_centerHorizontal="true"
                 android:onClick="gotoLogin"
                 android:padding="15dp"
-                android:text="existing User? Please Login" />
+                android:text="Existing User? Please Login"
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
 

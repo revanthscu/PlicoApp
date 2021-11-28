@@ -4,14 +4,15 @@
     android:layout_marginTop="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="welcome"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:text="Welcome"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,14 +47,13 @@
                 android:text="continue" />
 
 
-
-            <Button
-                android:id="@+id/goback"
-                android:onClick="submit"
-                android:layout_width="145dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center"
-                android:text="Goback" />
+        <Button
+            android:id="@+id/goback"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:onClick="submit"
+            android:text="Go Back" />
         </LinearLayout>
 
     </LinearLayout>

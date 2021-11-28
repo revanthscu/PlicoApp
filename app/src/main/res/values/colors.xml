@@ -138,5 +138,6 @@
 
 
     <color name="color">#767578</color>
+    <color name="logocolor">#0f7cf1</color>
 
 </resources>

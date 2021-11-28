@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/gradient">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +14,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
             android:orientation="vertical"
             android:paddingLeft="25dp"
             android:paddingTop="55dp"
@@ -37,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="60dp"
                     android:text="Plico"
                     android:textColor="#0f7cf1"
                     android:textSize="30dp" />
@@ -55,16 +54,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:layout_marginBottom="8dp"
-                    android:gravity="bottom">
+                    android:gravity="bottom"
+                    app:boxBackgroundMode="none">
 
                     <EditText
                         android:id="@+id/input_email"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_text_focused_bg"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_edittext"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
-                        android:padding="15dp" />
+                        android:padding="5dip" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -73,40 +73,43 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:gravity="bottom"
+                    app:boxBackgroundMode="none"
                     app:passwordToggleEnabled="true">
 
                     <EditText
                         android:id="@+id/input_password"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edit_text_focused_bg"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_edittext"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:padding="15dp" />
+                        android:padding="5dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_login"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:layout_marginBottom="25dp"
                     android:background="@drawable/white_rounded_button"
+                    android:onClick="Login"
                     android:padding="12dp"
                     android:text="Login"
-                    android:onClick="Login"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/link_signup"
-                    android:layout_width="match_parent"
+
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
+                    android:background="#00000000"
                     android:gravity="center"
-                    android:text="No accout yet? Create one"
                     android:onClick="Register"
-                    android:textColor="@color/transparentPink"
+                    android:text="Sign Up"
+                    android:textColor="@color/white"
                     android:textSize="16dp" />
             </LinearLayout>
 
