@@ -21,6 +21,11 @@ import com.example.plicoapp.Chat.ChatActivity;
 import com.example.plicoapp.MyProfileActivity;
 import com.example.plicoapp.R;
 import com.example.plicoapp.ViewOtherUserProfileActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
@@ -37,6 +42,7 @@ public class MainActivity extends Activity {
     private NotificationHelper mNotificationHelper;
     private Cards cards_data[];
     private PhotoAdapter arrayAdapter;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,8 @@ public class MainActivity extends Activity {
 
         cardFrame = findViewById(R.id.card_frame);
         moreFrame = findViewById(R.id.more_frame);
+
+        rowItems = new ArrayList<Cards>();
         // start pulsator
         /*
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
@@ -54,11 +62,39 @@ public class MainActivity extends Activity {
          */
         mNotificationHelper = new NotificationHelper(this);
 
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("Users")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                Cards cards = new Cards(doc.get("uid").toString(),
+                                        doc.get("name").toString(),
+                                        Integer.parseInt(doc.get("age").toString()),
+                                        doc.get("profilePic").toString(),
+                                        doc.get("bio").toString(),
+                                        doc.get("interests").toString(),
+                                        Integer.parseInt(doc.get("distance").toString()));
+
+                                rowItems.add(cards);
+                                Log.d(TAG, doc.getId() + " => " + doc.getData());
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
 
         //setupTopNavigationView();
 
 
-        rowItems = new ArrayList<Cards>();
+
+
+
         Cards cards = new Cards("1", "Swati Tripathy", 21, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "Simple and beautiful Girl", "Acting", 200);
         rowItems.add(cards);
         cards = new Cards("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
