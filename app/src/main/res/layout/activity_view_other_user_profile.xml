@@ -14,50 +14,15 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                app:cardCornerRadius="@dimen/_5dp"
-                app:cardElevation="4dp"
-                app:cardUseCompatPadding="true">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <!--<ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="100dp"
-                        android:src="@drawable/default_man" />-->
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/circle_profile_image"
-                        android:layout_width="151dp"
-                        android:layout_height="161dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="59dp"
-                        android:src="@drawable/default_man"
-                        app:civ_border_color="@color/transparentPink"
-                        app:civ_border_width="2dp" />
-                </RelativeLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
                 app:cardCornerRadius="@dimen/_5dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
@@ -66,7 +31,63 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="400dp"
+                        android:layout_height="350dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity=""
+                        android:src="@drawable/pic" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="30dp">
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/dislikebtn"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:background="@drawable/round_button_with_border"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_dislike" />
+
+                            <ImageButton
+                                android:id="@+id/commentbtn"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/round_button_with_border"
+                                android:padding="10dp"
+                                android:src="@drawable/love_icon" />
+
+
+                            <ImageButton
+                                android:id="@+id/likebtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/round_button_with_border"
+
+                                android:padding="10dp"
+                                android:src="@drawable/star_icon" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -77,9 +98,9 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
-                            android:text="FName LName, Age"
                             android:textColor="@color/black"
                             android:textSize="20dp"
+                            android:text="sjhdksjfhk skdjhf"
                             android:textStyle="bold" />
 
                         <TextView
@@ -87,8 +108,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/txtNameAge"
+                            android:text="kslkld skdjfksjdfksd,s"
                             android:paddingLeft="10dp"
-                            android:text="Occupation"
+
                             android:textColor="@color/black"
                             android:textSize="16dp" />
 
@@ -98,14 +120,12 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_gravity="center"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_margin="10dp"
                             android:background="@null"
                             android:paddingTop="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/send" />
+                            android:src="@drawable/ic_comment" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -129,7 +149,6 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/txtLocation"
                             android:paddingLeft="10dp"
-                            android:text="Santa clara, california"
                             android:textColor="@color/black"
                             android:textSize="16dp" />
 
@@ -142,7 +161,6 @@
                             android:layout_centerVertical="true"
                             android:layout_gravity="center"
                             android:layout_marginRight="10dp"
-                            android:text="1km"
                             app:chipIcon="@drawable/ic_location" />
 
                     </RelativeLayout>
@@ -168,7 +186,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/txtAbout"
                             android:paddingLeft="10dp"
-                            android:text="I am xyz. jaksdjsj laskjdlskja a asjdkl"
+
                             android:textColor="@color/black"
                             android:textSize="16dp" />
 
@@ -176,12 +194,12 @@
                             android:id="@+id/txtReadMore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/txtAboutDetail"
                             android:paddingLeft="10dp"
                             android:text="Read More"
                             android:textColor="@color/red"
-                            android:textSize="18dp"
-                            android:textStyle="bold"
-                            android:layout_below="@id/txtAboutDetail"/>
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
 
                     </RelativeLayout>
 
@@ -202,46 +220,47 @@
 
                         <!--                        LOAD CHIPS DYNAMICALLY -->
                         <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/interestsChipGroup"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_below="@id/txtInterests"
                             android:paddingLeft="10dp">
 
-                            <com.google.android.material.chip.Chip
-                                android:id="@+id/chip1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="10dp"
-                                android:text="Reading"
-                                app:chipIcon="@drawable/ic_like1" />
+                            <!-- <com.google.android.material.chip.Chip
+                                 android:id="@+id/chip1"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentEnd="true"
+                                 android:layout_alignParentRight="true"
+                                 android:layout_centerVertical="true"
+                                 android:layout_gravity="center"
+                                 android:layout_marginRight="10dp"
+                                 android:text="Reading"
+                                 app:chipIcon="@drawable/ic_like1" />
 
-                            <com.google.android.material.chip.Chip
-                                android:id="@+id/chip2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="10dp"
-                                android:text="Hiking"
-                                app:chipIcon="@drawable/ic_like1" />
+                             <com.google.android.material.chip.Chip
+                                 android:id="@+id/chip2"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentEnd="true"
+                                 android:layout_alignParentRight="true"
+                                 android:layout_centerVertical="true"
+                                 android:layout_gravity="center"
+                                 android:layout_marginRight="10dp"
+                                 android:text="Hiking"
+                                 app:chipIcon="@drawable/ic_like1" />
 
-                            <com.google.android.material.chip.Chip
-                                android:id="@+id/chip3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="10dp"
-                                android:text="Listening to music"
-                                app:chipIcon="@drawable/ic_like1" />
+                             <com.google.android.material.chip.Chip
+                                 android:id="@+id/chip3"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentEnd="true"
+                                 android:layout_alignParentRight="true"
+                                 android:layout_centerVertical="true"
+                                 android:layout_gravity="center"
+                                 android:layout_marginRight="10dp"
+                                 android:text="Listening to music"
+                                 app:chipIcon="@drawable/ic_like1" />-->
                         </com.google.android.material.chip.ChipGroup>
                     </RelativeLayout>
 
@@ -255,7 +274,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
-                            android:text="Interests"
+                            android:text="Gallery"
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold" />
@@ -294,7 +313,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/default_man" />
+                                        />
 
                                     <LinearLayout
                                         android:layout_width="wrap_content"
@@ -332,7 +351,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:scaleType="fitXY"
-                                            android:src="@drawable/default_man" />
+                                            />
 
                                         <LinearLayout
                                             android:layout_width="wrap_content"
@@ -363,7 +382,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:scaleType="fitXY"
-                                            android:src="@drawable/default_man" />
+                                            />
 
                                         <LinearLayout
                                             android:layout_width="wrap_content"
@@ -403,7 +422,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/default_man" />
+                                        />
 
                                     <LinearLayout
                                         android:layout_width="wrap_content"
@@ -435,7 +454,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/default_man" />
+                                        />
 
                                     <LinearLayout
                                         android:layout_width="wrap_content"
@@ -467,7 +486,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/default_man" />
+                                        />
 
                                     <LinearLayout
                                         android:layout_width="wrap_content"

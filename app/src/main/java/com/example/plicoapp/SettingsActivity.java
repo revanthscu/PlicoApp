@@ -4,14 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;;import com.google.android.material.slider.RangeSlider;
-
-import java.util.List;
+;import com.google.android.material.slider.RangeSlider;
 
 public class SettingsActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
@@ -24,38 +21,10 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        switchCompatMan = (SwitchCompat) findViewById(R.id.switch_man);
-        switchCompatMan.setOnCheckedChangeListener(this);
-        switchWoman= (SwitchCompat) findViewById(R.id.switch_woman);
-        switchWoman.setOnCheckedChangeListener(this);
-        newMatch = (SwitchCompat) findViewById(R.id.newMatch);
-        newMatch.setOnCheckedChangeListener(this);
-        MsgLikes = (SwitchCompat) findViewById(R.id.msgLikes);
-        MsgLikes.setOnCheckedChangeListener(this);
-        Msg = (SwitchCompat) findViewById(R.id.msg);
-        Msg.setOnCheckedChangeListener(this);
 
-        distBar =(SeekBar) findViewById(R.id.distance);
-        distance_text= (TextView)findViewById(R.id.distance_text);
-        distance_text.setText(Integer.toString(distBar.getProgress()));
-        //distBar.setProgress(5);
-        distBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
-            String val="";
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                val=Integer.toString(progress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                distance_text.setText(val+" miles");
-            }
-        });
+        setGenderSwitches();
+        setNotifs();
+        setDistance();
 
         ageBar =(RangeSlider) findViewById(R.id.sb_ageRange);
         ageBar.setValues(20f,50f);
@@ -88,4 +57,51 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
 
     public void Logout(View view) {
     }
+
+    public void setGenderSwitches (){
+        switchCompatMan = (SwitchCompat) findViewById(R.id.switch_man);
+        switchCompatMan.setOnCheckedChangeListener(this);
+        switchWoman= (SwitchCompat) findViewById(R.id.switch_woman);
+        switchWoman.setOnCheckedChangeListener(this);
+    }
+
+    public void setDistance()
+    {
+        distBar =(SeekBar) findViewById(R.id.distance);
+        distance_text= (TextView)findViewById(R.id.distance_text);
+        distance_text.setText(Integer.toString(distBar.getProgress()));
+        //distBar.setProgress(5);
+        distBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            String val="";
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                val=Integer.toString(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                distance_text.setText(val+" miles");
+            }
+        });
+    }
+
+    public void setAge_range(TextView age_range) {
+        this.age_range = age_range;
+    }
+
+    public void setNotifs()
+    {
+        newMatch = (SwitchCompat) findViewById(R.id.newMatch);
+        newMatch.setOnCheckedChangeListener(this);
+        MsgLikes = (SwitchCompat) findViewById(R.id.msgLikes);
+        MsgLikes.setOnCheckedChangeListener(this);
+        Msg = (SwitchCompat) findViewById(R.id.msg);
+        Msg.setOnCheckedChangeListener(this);
+    }
+
 }
