@@ -37,6 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
     public void onLoginClicked(View view) {
         String email = et_email.getText().toString().trim();
         String password = et_pass.getText().toString().trim();
+        String username = et_username.getText().toString().trim();
+        Bundle bundle = new Bundle();
+
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -46,7 +49,11 @@ public class RegisterActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            bundle.putString("EMAIL", email);
+                            bundle.putString("PASSWORD", password);
+                            bundle.putString("USERNAME", username);
                             Intent i = new Intent(RegisterActivity.this, BirthdayActivity.class);
+                            i.putExtras(bundle);
                             startActivity(i);
                         } else {
                             // If sign in fails, display a message to the user.

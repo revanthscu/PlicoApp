@@ -22,8 +22,16 @@ import androidx.appcompat.app.AppCompatActivity;
         public static final String destroy = "ondestroy";
         String name = "";
 
+        private boolean isfemale = true;
+        private boolean isintofemale = true;
+
+        Bundle bundle;
+
         RadioButton male;
         RadioButton female;
+
+        RadioButton male2;
+        RadioButton female2;
 
 
 
@@ -31,13 +39,22 @@ import androidx.appcompat.app.AppCompatActivity;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_gender);
 
+            bundle = getIntent().getExtras();
+
             male = findViewById(R.id.rb_male);
             female = findViewById(R.id.rb_female);
+
+            male2 = findViewById(R.id.rb_male2);
+            female2 = findViewById(R.id.rb_female2);
         }
 
         public void submit(View view) {
 
-            Intent intent = new Intent(this, TermsActivity.class);
+            bundle.putBoolean("ISFEMALE", isfemale);
+            bundle.putBoolean("ISINTOFEMALE", isintofemale);
+
+            Intent intent = new Intent(this, HobbyActivity.class);
+            intent.putExtras(bundle);
             // intent.putExtra("name", name);
             this.startActivity(intent);
         }
@@ -76,6 +93,14 @@ import androidx.appcompat.app.AppCompatActivity;
         protected void onDestroy() {
             super.onDestroy();
             Log.i(TAG, "On Destroy");
+        }
+
+        public void toggle(View view) {
+            isfemale = !isfemale;
+        }
+
+        public void toggle2(View view) {
+            isintofemale = !isintofemale;
         }
     }
 

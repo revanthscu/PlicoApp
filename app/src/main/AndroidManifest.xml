@@ -26,6 +26,8 @@
         <activity android:name=".SettingsActivity"/>
         <activity android:name=".TermsActivity"/>
         <activity android:name=".ViewOtherUserProfileActivity"/>
+        <activity android:name=".HobbyActivity"/>
+
 
         <activity
             android:name=".RegisterActivity"

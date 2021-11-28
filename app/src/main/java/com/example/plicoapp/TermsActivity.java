@@ -6,7 +6,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.plicoapp.Matching.Cards;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TermsActivity extends AppCompatActivity {
     public static final String TAG = "HomeActivity";
@@ -18,6 +30,11 @@ public class TermsActivity extends AppCompatActivity {
     public static final String destroy = "ondestroy";
     String name = "";
 
+    Bundle bundle;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    String uid;
+
 
 
 
@@ -25,15 +42,88 @@ public class TermsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.termsofuse);
 
+        bundle = getIntent().getExtras();
+
         Log.d(TAG,"Gowtham");
+
+        mAuth = FirebaseAuth.getInstance();
+
+        db = FirebaseFirestore.getInstance();
+
+        uid = mAuth.getCurrentUser().getUid();
 
     }
 
     public void submit(View view){
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.putExtra("name", name);
-        this.startActivity(intent);
+        String username = bundle.getString("USERNAME");
+        String email = bundle.getString("EMAIL");
+        String birthday = bundle.getString("DATE");
+        boolean isFemale = bundle.getBoolean("ISFEMALE");
+        boolean isintoFemale = bundle.getBoolean("ISINTOFEMALE");
+        ArrayList hobby = bundle.getStringArrayList("HOBBY");
+
+        String year = birthday.length() > 2 ? birthday.substring(birthday.length() - 2) : birthday;
+        int foo = Integer.parseInt(year);
+        int age = 0;
+        if (foo > 21) {
+            int years = 1900 + foo;
+            age = 2021 - years;
+        } else {
+            int years2 = 2000 + foo;
+            age = 2021 - years2;
+        }
+
+        Cards c = new Cards(uid, username, age, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "add bio",hobby.toString(), 0  );
+
+        String gender;
+        String intogender;
+        if (isFemale) {
+            gender = "female";
+        } else {
+            gender = "male";
+        }
+
+        if(isintoFemale) {
+            intogender = "female";
+        } else {
+            intogender = "male";
+        }
+
+        Map<String, Object> user = new HashMap<>();
+        user.put("name", username);
+        user.put("email", email);
+        user.put("age", age);
+        user.put("profilePic", "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg");
+        user.put("bio", "Add your bio!");
+        user.put("gender", gender);
+        user.put("pgender", intogender);
+        user.put("distance", 0);
+        user.put("interests", hobby);
+        user.put("uid", uid);
+
+
+        db.collection("Users").document(uid)
+                .set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+
+                        Intent intent = new Intent(TermsActivity.this, LoginActivity.class);
+
+
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
+
     }
 
 
