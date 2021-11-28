@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/i_cards"
+        android:enabled="true"
+        android:icon="@drawable/ic_card"
+        android:title="" />
+    <item
+        android:id="@+id/i_likes"
+        android:enabled="true"
+        android:icon="@drawable/ic_heart_icon"
+        android:title=""/>
+    <item
+        android:id="@+id/i_chat"
+        android:enabled="true"
+        android:icon="@drawable/ic_chat"
+        android:title=""/>
+    <item
+        android:id="@+id/i_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profilelogo"
+        android:title=""/>
+</menu>
