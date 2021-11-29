@@ -20,7 +20,7 @@
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
         <item name="colorPrimary">@color/light_grey</item>
-        <item name="colorOnPrimary">@color/colorAccent</item>
-        <item name="iconTint">@color/colorAccent</item>
+        <item name="colorOnPrimary">@color/link_blue</item>
+        <item name="iconTint">@color/link_blue</item>
     </style>
 </resources>
