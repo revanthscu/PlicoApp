@@ -74,11 +74,15 @@
         <entry key="app/src/main/res/drawable/ic_menu_share.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
         <entry key="app/src/main/res/layout/active_user_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_birthday.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_btn_dislike.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_btn_like.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/layout/activity_chatscreen.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_edit_profile_old.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/activity_gender.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_hobby.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_introduction_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -86,13 +90,17 @@
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_profile_checkin_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_profile_checkin_matched.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_profile_old.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_register_age.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_gender.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_gender_prefection.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_hobby.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_registerbasic_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_register_home1.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/activity_registerbasic_info.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_swipe.xml" value="0.34601449275362317" />
+        <entry key="app/src/main/res/layout/activity_view_other_user_profile.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item.xml" value="0.1" />
@@ -101,7 +109,9 @@
         <entry key="app/src/main/res/layout/matched_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/matched_user_item.xml" value="0.36047856773715603" />
         <entry key="app/src/main/res/layout/message.xml" value="0.15648148148148147" />
-        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/registration.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/termsofuse.xml" value="0.26149131767109296" />
       </map>
     </option>
   </component>

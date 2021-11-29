@@ -16,6 +16,11 @@
     android:textColor="@color/black"
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="50dp"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gender"
+        android:id="@+id/gender">
     <RadioButton
         android:id="@+id/rb_male"
         android:layout_width="match_parent"
@@ -35,7 +40,7 @@
         android:layout_marginRight="10dp"
         android:hint="Female"
         android:textColorHint="@color/white"/>
-
+    </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,6 +49,10 @@
         android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gender">
     <RadioButton
         android:id="@+id/rb_male2"
         android:layout_width="match_parent"
@@ -63,6 +72,7 @@
         android:layout_marginRight="10dp"
         android:hint="Female"
         android:textColorHint="@color/white"/>
+    </RadioGroup>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
