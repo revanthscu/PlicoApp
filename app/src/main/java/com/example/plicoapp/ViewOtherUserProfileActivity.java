@@ -1,22 +1,14 @@
 package com.example.plicoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.core.widget.NestedScrollView;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.media.Image;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
-
-import org.w3c.dom.Text;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -26,7 +18,7 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
     TextView txtNameAge, txtLocation, txtOccupation, txtAbout;
     Chip chipLoc;
     ChipGroup chipInterests;
-    CircleImageView circleImg;
+    ImageView profilePic;
     ImageView iv1,iv2,iv3,iv4,iv5,iv6;
 
     @Override
@@ -50,8 +42,8 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
     }
 
     private void setProfilePic() {
-        //      circleImg = (CircleImageView) findViewById(R.id.circle_profile_image);
-//        circleImg.setImageResource(infoObj.getprofilePic());
+        profilePic = (ImageView) findViewById(R.id.image_view_3);
+        profilePic.setImageResource(infoObj.getprofilePic());
     }
 
     private void setInfoObj() {
@@ -66,7 +58,7 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
         infoObj.setLocation("Santa Clara");
         infoObj.setLocationVal(7.5);
         infoObj.setInterests(new String[]{"Watching TV", "Coding", "Playing guitar"});
-        infoObj.setprofilePic(R.drawable.default_man);
+        infoObj.setprofilePic(R.drawable.pic);
         infoObj.setPhotos(pics);
     }
 
