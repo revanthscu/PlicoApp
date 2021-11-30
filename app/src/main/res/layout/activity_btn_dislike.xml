@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/gradient"
     android:orientation="vertical">
 
     <!-- top navigation -->
@@ -63,17 +63,18 @@
                 android:layout_alignParentTop="true"
                 android:background="@drawable/round_button_with_border"
                 android:padding="10dp"
+                android:onClick="DislikeBtn"
                 android:src="@drawable/ic_dislike" />
 
             <ImageButton
                 android:id="@+id/commentbtn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:scaleType="fitXY"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/round_button_with_border"
                 android:padding="10dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_comment" />
 
 
@@ -81,13 +82,13 @@
                 android:id="@+id/likebtn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:scaleType="fitXY"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/round_button_with_border"
                 android:onClick="LikeBtn"
                 android:padding="10dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_like1" />
 
 
