@@ -1,9 +1,11 @@
 package com.example.plicoapp.ProfileSetting;
 
+import java.util.ArrayList;
+
 public class EditProfileContract {
 
     private String about = null;
-    private String[] interests = null;
+    private ArrayList interests = null;
     private String jobTitle = null;
     private String company = null;
     private String school = null;
@@ -14,7 +16,7 @@ public class EditProfileContract {
 
     public EditProfileContract() {
         this.about = "";
-        this.interests = new String[]{};
+        this.interests = new ArrayList();
         this.jobTitle = "";
         this.company = "";
         this.school = "";
@@ -32,11 +34,11 @@ public class EditProfileContract {
         this.about = about;
     }
 
-    public String[] getInterests() {
+    public ArrayList getInterests() {
         return interests;
     }
 
-    public void setInterests(String[] interests) {
+    public void setInterests(ArrayList interests) {
         this.interests = interests;
     }
 

@@ -1,9 +1,11 @@
 package com.example.plicoapp.ProfileSetting;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -13,8 +15,18 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.plicoapp.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 public class EditProfileActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
 
@@ -25,11 +37,51 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
     Button b1,b2,b3,b4,b5,b6;
     EditProfileContract profileInfo;
     ChipGroup chipInterests;
+    String name, bio, profilePic, pGender, gender, job, company, school, uid;
+    private ArrayList interests;
+    private Integer age, distance;
+
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+        uid = mAuth.getCurrentUser().getUid();
+
+        DocumentReference docRef = db.collection("Users").document(uid);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if (doc.exists()) {
+                        name = doc.get("name").toString();
+                        age = Integer.parseInt(doc.get("age").toString());
+                        profilePic = doc.get("profilePic").toString();
+                        bio = doc.get("bio").toString();
+                        interests = (ArrayList) doc.get("interests");
+                        distance = Integer.parseInt(doc.get("distance").toString());
+                        gender = doc.get("gender").toString();
+                        pGender = doc.get("pgender").toString();
+
+                        Log.d("EditProf", "DocumentSnapshot data: " + doc.getData());
+                    } else {
+                        Log.d("EditProf", "No such document");
+                    }
+                } else {
+                    Log.d("EditProf", "get failed with ", task.getException());
+                }
+            }
+        });
+
+
+
 
         setInfoObj();
         setImages();
@@ -65,11 +117,11 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
 
         chipInterests = (ChipGroup) findViewById(R.id.interestsChipGroup);
         Chip chip;
-        String[] s = profileInfo.getInterests();
-        for (int i = 0; i < s.length; i++) {
+        ArrayList s = profileInfo.getInterests();
+        for (int i = 0; i < s.size(); i++) {
             chip = new Chip(this, null, R.style.Widget_MaterialComponents_Chip_Choice);
             chip.setChipIcon(getDrawable(R.drawable.ic_check_unselect));
-            chip.setText(s[i]);
+            chip.setText(s.get(i).toString());
             chipInterests.addView(chip);
             //chip.setChipBackgroundColorResource(R.color.colorAccent);
             //chip.setCloseIconVisible(true);
@@ -180,12 +232,12 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
         //database call
         int[] pics = new int[]{R.drawable.default_man, R.drawable.default_man, R.drawable.default_man, R.drawable.default_man, R.drawable.default_man, R.drawable.default_man};
         profileInfo = new EditProfileContract();
-        profileInfo.setAbout("I am XYZ from PQR. I like MNOP.");
-        profileInfo.setInterests(new String[]{"Cooking","Stitching","Singing"});
+        profileInfo.setAbout(bio);
+        profileInfo.setInterests(interests);
         profileInfo.setJobTitle("Singer");
         profileInfo.setCompany("ABC Corp");
         profileInfo.setSchool("St. Mary's");
-        profileInfo.setGender("Female");
+        profileInfo.setGender(gender);
         profileInfo.setbShowAge(true);
         profileInfo.setbShowDistance(true);
         profileInfo.setPhotos(pics);
@@ -248,6 +300,34 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
 
 
         }
+
+    }
+
+    public void SaveData(View view) {
+
+        bio = etAbout.getText().toString();
+        job = etJob.getText().toString();
+        company = etCompany.getText().toString();
+        school = etSchool.getText().toString();
+
+        DocumentReference uRef = db.collection("Users").document(uid);
+
+        uRef
+                .update("bio", bio, "job", job, "company", company, "school", school)
+
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("TAG", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error updating document", e);
+                    }
+                });
+
 
     }
 }

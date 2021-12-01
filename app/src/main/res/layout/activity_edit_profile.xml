@@ -327,6 +327,20 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
+                    <Button
+                        android:id="@+id/Save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"
+                        android:backgroundTint="@color/gray_btn_bg_color"
+                        android:textAlignment="center"
+                        android:onClick="SaveData"
+                        >
+
+                    </Button>
+
                     <TextView
                         android:id="@+id/txtAbout"
                         android:layout_width="wrap_content"
