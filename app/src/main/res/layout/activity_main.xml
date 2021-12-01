@@ -16,7 +16,6 @@
         android:id="@+id/card_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/topLevelNavBar"
         android:layout_marginTop="70dp">
 
         <LinearLayout
@@ -108,6 +107,14 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/bottom_navigation_menu" />
+
         </LinearLayout>
     </FrameLayout>
 

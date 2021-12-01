@@ -4,20 +4,20 @@
         android:id="@+id/i_cards"
         android:enabled="true"
         android:icon="@drawable/ic_card"
-        android:title="" />
+        android:title="Matching" />
     <item
         android:id="@+id/i_likes"
         android:enabled="true"
         android:icon="@drawable/ic_heart_icon"
-        android:title=""/>
+        android:title="Likes"/>
     <item
         android:id="@+id/i_chat"
         android:enabled="true"
         android:icon="@drawable/ic_chat"
-        android:title=""/>
+        android:title="Chat"/>
     <item
         android:id="@+id/i_profile"
         android:enabled="true"
         android:icon="@drawable/ic_profilelogo"
-        android:title=""/>
+        android:title="Profile"/>
 </menu>

@@ -98,7 +98,8 @@
                     android:layout_marginRight="20dp"
                     android:background="@color/white"
                     android:src="@drawable/ic_info"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:onClick="MoreInfo"/>
 
             </LinearLayout>
 

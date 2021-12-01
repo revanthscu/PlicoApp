@@ -65,10 +65,28 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                         age = Integer.parseInt(doc.get("age").toString());
                         profilePic = doc.get("profilePic").toString();
                         bio = doc.get("bio").toString();
-                        interests = (ArrayList) doc.get("interests");
+                        interests = (ArrayList<String>) doc.get("interests");
                         distance = Integer.parseInt(doc.get("distance").toString());
                         gender = doc.get("gender").toString();
                         pGender = doc.get("pgender").toString();
+                        job = doc.get("job").toString();
+                        company = doc.get("company").toString();
+                        school = doc.get("school").toString();
+
+                        Log.i("interests", interests.toString());
+
+
+                        setInfoObj();
+                        setImages();
+                        setAbout();
+                        setInterests();
+                        setJobTitle();
+                        setCompany();
+                        setSchool();
+                        setGender();
+                        setAgeSwitch();
+                        setDistanceSwitch();
+                        setButtons();
 
                         Log.d("EditProf", "DocumentSnapshot data: " + doc.getData());
                     } else {
@@ -80,20 +98,6 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
             }
         });
 
-
-
-
-        setInfoObj();
-        setImages();
-        setAbout();
-        setInterests();
-        setJobTitle();
-        setCompany();
-        setSchool();
-        setGender();
-        setAgeSwitch();
-        setDistanceSwitch();
-        setButtons();
 
     }
 

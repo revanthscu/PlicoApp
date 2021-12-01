@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ListView;
@@ -18,9 +20,11 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.ProfileSetting.MyProfileActivity;
 import com.example.plicoapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -41,11 +45,14 @@ public class MainActivity extends Activity {
     private Cards cards_data[];
     private PhotoAdapter arrayAdapter;
     private FirebaseFirestore db;
+    BottomNavigationView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setMenu();
 
 
         cardFrame = findViewById(R.id.card_frame);
@@ -300,6 +307,40 @@ public class MainActivity extends Activity {
     }
 
     public void MoreInfo(View view) {
+
+        Intent i = new Intent(MainActivity.this, MyProfileActivity.class);
+        startActivity(i);
+
+    }
+
+
+    private void setMenu() {
+
+        menu = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.i_cards:
+                        Toast.makeText(getApplicationContext(),"Swipe activity", Toast.LENGTH_LONG).show();
+                        return true;
+                    case R.id.i_likes:
+                        Toast.makeText(getApplicationContext(),"Likes tracking activity", Toast.LENGTH_LONG).show();
+                        return true;
+                    case R.id.i_chat:
+                        Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
+                        return true;
+                    case R.id.i_profile:
+                        //my profile activity
+                        Intent i = new Intent(getApplicationContext(), MyProfileActivity.class);
+                        startActivity(i);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 }
