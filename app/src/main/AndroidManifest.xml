@@ -19,7 +19,8 @@
         <activity android:name=".Matching.BtnDislikeActivity"/>
         <activity android:name=".Matching.BtnLikeActivity"/>
         <activity android:name=".Matching.ProfileCheckinMain"/>
-        <activity android:name=".Chat.ChatActivity">
+        <activity android:name=".Chat.ChatActivity"
+            android:parentActivityName=".Matching.MainActivity">
 
         </activity>
         <activity android:name=".Registration.VerificationActivity" />

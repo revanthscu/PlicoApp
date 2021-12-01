@@ -217,7 +217,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
-                            android:text="Interests"
+                            android:text="Your Common Interests Are..."
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold" />

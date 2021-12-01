@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Cards {
     private String userId;
-    private String name, profileImageUrl, bio, interest;
+    private String name, profileImageUrl, bio, interest, gender;
     private ArrayList<String> interests;
     private int age;
     private int distance;
 
-    public Cards(String userId, String name, int age, String profileImageUrl, String bio, ArrayList interests, int distance) {
+    public Cards(String userId, String name, int age, String profileImageUrl, String bio, ArrayList interests, int distance, String gender) {
         this.userId = userId;
         this.name = name;
         this.age = age;
@@ -17,6 +17,7 @@ public class Cards {
         this.bio = bio;
         this.interests = interests;
         this.distance = distance;
+        this.gender = gender;
     }
 
     public Cards(String profileImageUrl) {
@@ -65,6 +66,14 @@ public class Cards {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
 

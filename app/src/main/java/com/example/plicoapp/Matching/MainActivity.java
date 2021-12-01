@@ -25,6 +25,9 @@ import com.example.plicoapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,6 +35,7 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
@@ -39,13 +43,17 @@ public class MainActivity extends Activity {
     final private int MY_PERMISSIONS_REQUEST_LOCATION = 123;
     ListView listView;
     List<Cards> rowItems;
+    List<Cards> tempRowItems;
     FrameLayout cardFrame, moreFrame;
     private Context mContext = MainActivity.this;
     private NotificationHelper mNotificationHelper;
     private Cards cards_data[];
     private PhotoAdapter arrayAdapter;
     private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
     BottomNavigationView menu;
+    Cards myCard;
+    String gender, pgender, myUid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +63,14 @@ public class MainActivity extends Activity {
         setMenu();
 
 
+        mAuth = FirebaseAuth.getInstance();
+        myUid = mAuth.getCurrentUser().getUid();
+
         cardFrame = findViewById(R.id.card_frame);
         moreFrame = findViewById(R.id.more_frame);
 
         rowItems = new ArrayList<Cards>();
+        tempRowItems = new ArrayList<Cards>();
         // start pulsator
         /*
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
@@ -68,6 +80,35 @@ public class MainActivity extends Activity {
         mNotificationHelper = new NotificationHelper(this);
 
         db = FirebaseFirestore.getInstance();
+
+
+        DocumentReference docRef = db.collection("Users").document(myUid);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if (doc.exists()) {
+                        Cards cards = new Cards(doc.get("uid").toString(),
+                                doc.get("name").toString(),
+                                Integer.parseInt(doc.get("age").toString()),
+                                doc.get("profilePic").toString(),
+                                doc.get("bio").toString(),
+                                (ArrayList) doc.get("interests"),
+                                Integer.parseInt(doc.get("distance").toString()),
+                                doc.get("gender").toString());
+                        gender = doc.get("gender").toString();
+                        pgender = doc.get("pgender").toString();
+                        myCard = cards;
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
 
         db.collection("Users")
                 .get()
@@ -82,21 +123,39 @@ public class MainActivity extends Activity {
                                         doc.get("profilePic").toString(),
                                         doc.get("bio").toString(),
                                         (ArrayList) doc.get("interests"),
-                                        Integer.parseInt(doc.get("distance").toString()));
+                                        Integer.parseInt(doc.get("distance").toString()),
+                                        doc.get("gender").toString());
 
-                                rowItems.add(cards);
-                                Log.d(TAG, doc.getId() + " => " + doc.getData());
+                                if(doc.get("uid").toString().equals(myUid)) {
+                                    myCard = cards;
+                                    gender = doc.get("gender").toString();
+                                    pgender = doc.get("pgender").toString();
+                                } else if (pgender.equals(doc.get("gender").toString())){
+                                    //rowItems.add(cards);
+                                    tempRowItems.add(cards);
+                                    Log.d(TAG, doc.getId() + " => " + doc.getData());
+                                }
+
                             }
+
+                            filterMatches();
+                            arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+                            checkRowItem();
+                            updateSwipeCard();
+
+
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
                     }
                 });
 
+        checkRowItem();
 
         //setupTopNavigationView();
 
 
+        /*
         ArrayList interestList = new ArrayList<String>();
         interestList.add("movies");
         interestList.add("hiking");
@@ -117,11 +176,16 @@ public class MainActivity extends Activity {
         cards = new Cards("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", interestList, 5000);
         rowItems.add(cards);
 
+         */
 
-        arrayAdapter = new PhotoAdapter(this, R.layout.item, rowItems);
 
-        checkRowItem();
-        updateSwipeCard();
+
+    }
+
+    private void filterMatches() {
+        for (Cards ucard : tempRowItems) {
+            rowItems.add(ucard.getInterest().contains(myCard.getInterest()) ? ucard: null);
+        }
     }
 
     private void checkRowItem() {
@@ -216,16 +280,22 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
 
+                Cards thisCard = rowItems.get(itemPosition);
+
+                ArrayList<String> commonInterests = new ArrayList<String>();
+
+                commonInterests = (ArrayList<String>) myCard.getInterest().stream().filter(thisCard.getInterest()::contains).collect(Collectors.toList());
+
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
 
-                Cards thisCard = rowItems.get(itemPosition);
+
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("UID", thisCard.getUserId());
                 bundle2.putString("NAME", thisCard.getName());
                 bundle2.putInt("AGE", thisCard.getAge());
                 bundle2.putString("PICTURE", thisCard.getProfileImageUrl());
                 bundle2.putString("BIO", thisCard.getBio());
-                bundle2.putStringArrayList("INTERESTS", thisCard.getInterest());
+                bundle2.putStringArrayList("INTERESTS", commonInterests);
                 bundle2.putInt("DISTANCE", thisCard.getDistance());
 
 

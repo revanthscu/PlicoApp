@@ -73,7 +73,7 @@ public class TermsActivity extends AppCompatActivity {
             age = 2021 - years2;
         }
 
-        Cards c = new Cards(uid, username, age, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "add bio",hobby, 0  );
+
 
         String gender;
         String intogender;

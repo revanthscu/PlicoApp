@@ -238,9 +238,9 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
         profileInfo = new EditProfileContract();
         profileInfo.setAbout(bio);
         profileInfo.setInterests(interests);
-        profileInfo.setJobTitle("Singer");
-        profileInfo.setCompany("ABC Corp");
-        profileInfo.setSchool("St. Mary's");
+        profileInfo.setJobTitle(job);
+        profileInfo.setCompany(company);
+        profileInfo.setSchool(school);
         profileInfo.setGender(gender);
         profileInfo.setbShowAge(true);
         profileInfo.setbShowDistance(true);
