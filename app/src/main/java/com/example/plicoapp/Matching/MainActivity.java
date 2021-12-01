@@ -62,6 +62,7 @@ public class MainActivity extends Activity {
 
         setMenu();
 
+        pgender = "";
 
         mAuth = FirebaseAuth.getInstance();
         myUid = mAuth.getCurrentUser().getUid();
@@ -126,23 +127,17 @@ public class MainActivity extends Activity {
                                         Integer.parseInt(doc.get("distance").toString()),
                                         doc.get("gender").toString());
 
-                                if(doc.get("uid").toString().equals(myUid)) {
-                                    myCard = cards;
-                                    gender = doc.get("gender").toString();
-                                    pgender = doc.get("pgender").toString();
-                                } else if (pgender.equals(doc.get("gender").toString())){
+                                if (pgender.equals(doc.get("gender").toString()) && !myUid.equals(doc.getId())){
                                     //rowItems.add(cards);
-                                    tempRowItems.add(cards);
+                                    rowItems.add(cards);
                                     Log.d(TAG, doc.getId() + " => " + doc.getData());
                                 }
-
                             }
 
-                            filterMatches();
+                            //filterMatches();
                             arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
-                            checkRowItem();
-                            updateSwipeCard();
 
+                            updateSwipeCard();
 
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -150,10 +145,11 @@ public class MainActivity extends Activity {
                     }
                 });
 
-        checkRowItem();
 
         //setupTopNavigationView();
 
+
+        checkRowItem();
 
         /*
         ArrayList interestList = new ArrayList<String>();
@@ -183,9 +179,11 @@ public class MainActivity extends Activity {
     }
 
     private void filterMatches() {
+        Log.i("Matching",tempRowItems.toString());
         for (Cards ucard : tempRowItems) {
             rowItems.add(ucard.getInterest().contains(myCard.getInterest()) ? ucard: null);
         }
+        Log.i("Matching", rowItems.toString());
     }
 
     private void checkRowItem() {
