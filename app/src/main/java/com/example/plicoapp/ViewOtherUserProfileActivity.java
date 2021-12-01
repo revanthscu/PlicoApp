@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+import java.util.ArrayList;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ViewOtherUserProfileActivity extends AppCompatActivity {
@@ -20,11 +22,26 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
     ChipGroup chipInterests;
     ImageView profilePic;
     ImageView iv1,iv2,iv3,iv4,iv5,iv6;
+    private String uid, name, profileImageUrl, bio;
+    private ArrayList interests;
+    private Integer age, distance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_other_user_profile);
+
+        Bundle bundle = getIntent().getExtras();
+
+        uid = bundle.getString("UID");
+        name = bundle.getString("NAME");
+        age = bundle.getInt("AGE");
+        profileImageUrl = bundle.getString("PICTURE");
+        bio = bundle.getString("BIO");
+        interests = bundle.getStringArrayList("INTERESTS");
+        distance = bundle.getInt("DISTANCE");
+
+
         setInfoObj();
         setProfilePic();
         setNameAge();
@@ -50,14 +67,14 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
         //database call
         int[] pics = new int[]{R.drawable.default_man, R.drawable.default_man, R.drawable.default_man, R.drawable.default_man, R.drawable.default_man, R.drawable.default_man};
         infoObj = new ViewOtherUserInfoContract();
-        infoObj.setAbout("I am XYZ from PQR. I like MNOP.");
-        infoObj.setAge(27);
-        infoObj.setFName("Stephen");
-        infoObj.setLName("Hathway");
+        infoObj.setAbout(bio);
+        infoObj.setAge(age);
+        infoObj.setFName(name);
+        infoObj.setLName(name);
         infoObj.setOccupation("Fashion designer");
         infoObj.setLocation("Santa Clara");
-        infoObj.setLocationVal(7.5);
-        infoObj.setInterests(new String[]{"Watching TV", "Coding", "Playing guitar"});
+        infoObj.setLocationVal(distance);
+        infoObj.setInterests(interests);
         infoObj.setprofilePic(R.drawable.pic);
         infoObj.setPhotos(pics);
     }
@@ -83,11 +100,11 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
 
         chipInterests = (ChipGroup) findViewById(R.id.interestsChipGroup);
         Chip chip;
-        String[] s = infoObj.getInterests();
-        for (int i = 0; i < s.length; i++) {
+        ArrayList s = infoObj.getInterests();
+        for (int i = 0; i < s.size(); i++) {
             chip = new Chip(this, null, R.style.Widget_MaterialComponents_Chip_Choice);
             chip.setChipIcon(getDrawable(R.drawable.ic_check_unselect));
-            chip.setText(s[i]);
+            chip.setText(s.get(i).toString());
             chipInterests.addView(chip);
             //chip.setChipBackgroundColorResource(R.color.colorAccent);
             //chip.setCloseIconVisible(true);

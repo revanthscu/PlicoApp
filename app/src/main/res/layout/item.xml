@@ -96,7 +96,6 @@
                     android:scaleType="fitXY"
                     android:layout_marginRight="20dp"
                     android:background="@color/white"
-                    android:onClick="MoreInfo"
                     android:src="@drawable/ic_info"
                     tools:ignore="SpeakableTextPresentCheck" />
 

@@ -1,18 +1,21 @@
 package com.example.plicoapp.Matching;
 
+import java.util.ArrayList;
+
 public class Cards {
     private String userId;
     private String name, profileImageUrl, bio, interest;
+    private ArrayList<String> interests;
     private int age;
     private int distance;
 
-    public Cards(String userId, String name, int age, String profileImageUrl, String bio, String interest, int distance) {
+    public Cards(String userId, String name, int age, String profileImageUrl, String bio, ArrayList interests, int distance) {
         this.userId = userId;
         this.name = name;
         this.age = age;
         this.profileImageUrl = profileImageUrl;
         this.bio = bio;
-        this.interest = interest;
+        this.interests = interests;
         this.distance = distance;
     }
 
@@ -28,8 +31,8 @@ public class Cards {
         return bio;
     }
 
-    public String getInterest() {
-        return interest;
+    public ArrayList getInterest() {
+        return interests;
     }
 
     public int getAge() {

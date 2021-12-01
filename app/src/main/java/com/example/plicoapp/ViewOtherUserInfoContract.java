@@ -2,6 +2,8 @@ package com.example.plicoapp;
 
 import android.graphics.Bitmap;
 
+import java.util.ArrayList;
+
 public class ViewOtherUserInfoContract {
 
     private String FName;
@@ -10,7 +12,7 @@ public class ViewOtherUserInfoContract {
     private String location;
     private double locationVal;
     private String about;
-    private String[] interests;
+    private ArrayList interests;
     private int[] photos;
     private int profilePic;
     private String occupation;
@@ -21,7 +23,7 @@ public class ViewOtherUserInfoContract {
         this.location = "";
         this.locationVal = 0;
         this.about = "";
-        this.interests = new String[]{};
+        this.interests = new ArrayList();
         this.photos = new int[]{};
         this.profilePic=0;
         this.occupation="";
@@ -81,11 +83,11 @@ public class ViewOtherUserInfoContract {
         this.about = about;
     }
 
-    public String[] getInterests() {
+    public ArrayList getInterests() {
         return interests;
     }
 
-    public void setInterests(String[] interests) {
+    public void setInterests(ArrayList interests) {
         this.interests = interests;
     }
 
