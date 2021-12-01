@@ -183,7 +183,6 @@ public class MainActivity extends Activity {
             @Override
             public void onRightCardExit(Object dataObject) {
                 Cards obj = (Cards) dataObject;
-
                 //check matches
                 checkRowItem();
 

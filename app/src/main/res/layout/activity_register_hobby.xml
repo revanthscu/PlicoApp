@@ -75,13 +75,13 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
                 android:elevation="24dp"
+                android:onClick="Sport"
                 android:text="SPORTS"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="Sport"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/travelSelectionButton"
@@ -91,13 +91,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="travel"
                 android:text="TRAVEL"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="travel"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -113,13 +114,14 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="music"
                 android:text="MUSIC"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="music"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/fishingSelectionButton"
@@ -129,13 +131,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
-                android:text="FOOD"
+                android:onClick="fish"
+                android:text="FISHING"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="fish"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -151,13 +154,14 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="tv"
                 android:text="TV SHOWS"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="tv"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MoviesSelectionButton"
@@ -167,13 +171,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="movies"
                 android:text="APP DEV"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="movies"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -189,13 +194,14 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
-                android:text="EATING"
+                android:onClick="eat"
+                android:text="DANCE"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="eat"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/HikeSelectionButton"
@@ -205,13 +211,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="hike"
                 android:text="HIKING"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="hike"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -227,13 +234,14 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="Code"
                 android:text="CODING"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="Code"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/appDevSelectionButton"
@@ -243,13 +251,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
-                android:background="#ff4081"
+
                 android:elevation="24dp"
+                android:onClick="appdev"
                 android:text="MOVIES"
+                android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:onClick="appdev"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -261,8 +270,8 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="24dp"
-            android:background="#ff4081"
-            android:backgroundTint="#ff4081"
+
+            android:backgroundTint="@android:color/holo_purple"
             android:elevation="24dp"
             android:onClick="onHobbyContinueClicked"
             android:text="Register"
