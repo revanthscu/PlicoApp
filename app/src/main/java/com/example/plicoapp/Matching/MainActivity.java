@@ -123,6 +123,9 @@ public class MainActivity extends Activity {
         if (rowItems.isEmpty()) {
             moreFrame.setVisibility(View.VISIBLE);
             cardFrame.setVisibility(View.GONE);
+        } else {
+            moreFrame.setVisibility(View.GONE);
+            cardFrame.setVisibility(View.VISIBLE);
         }
     }
 
@@ -227,6 +230,8 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        checkRowItem();
     }
 
 

@@ -9,12 +9,14 @@
     android:orientation="vertical"
     tools:context=".Matching.MainActivity">
 
-    <include layout="@layout/layout_top_navigation_view" />
+    <include layout="@layout/layout_top_navigation_view"
+        android:id="@+id/topLevelNavBar"/>
 
     <FrameLayout
         android:id="@+id/card_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/topLevelNavBar"
         android:layout_marginTop="70dp">
 
         <LinearLayout
