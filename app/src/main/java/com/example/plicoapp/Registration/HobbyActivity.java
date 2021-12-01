@@ -1,4 +1,4 @@
-package com.example.plicoapp;
+package com.example.plicoapp.Registration;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,8 +9,9 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.plicoapp.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class HobbyActivity extends AppCompatActivity {
 

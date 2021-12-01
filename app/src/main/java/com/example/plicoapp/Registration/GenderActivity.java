@@ -1,18 +1,17 @@
-package com.example.plicoapp;
+package com.example.plicoapp.Registration;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.plicoapp.R;
 
 
-
-    public class GenderActivity extends AppCompatActivity {
+public class GenderActivity extends AppCompatActivity {
         public static final String TAG = "MainActivity";
         public static final String start = "onstart";
         public static final String resume = "onresume";

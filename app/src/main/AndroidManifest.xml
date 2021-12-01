@@ -22,22 +22,22 @@
         <activity android:name=".Chat.ChatActivity">
 
         </activity>
-        <activity android:name=".VerificationActivity" />
-        <activity android:name=".BirthdayActivity"/>
-        <activity android:name=".EditProfileActivity"/>
-        <activity android:name=".GenderActivity"/>
-        <activity android:name=".MyProfileActivity" />
-        <activity android:name=".SettingsActivity"/>
-        <activity android:name=".TermsActivity"/>
-        <activity android:name=".ViewOtherUserProfileActivity"/>
-        <activity android:name=".HobbyActivity"/>
+        <activity android:name=".Registration.VerificationActivity" />
+        <activity android:name=".Registration.BirthdayActivity"/>
+        <activity android:name=".ProfileSetting.EditProfileActivity"/>
+        <activity android:name=".Registration.GenderActivity"/>
+        <activity android:name=".ProfileSetting.MyProfileActivity" />
+        <activity android:name=".ProfileSetting.SettingsActivity"/>
+        <activity android:name=".Registration.TermsActivity"/>
+        <activity android:name=".Matching.ViewOtherUserProfileActivity"/>
+        <activity android:name=".Registration.HobbyActivity"/>
 
 
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Registration.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Registration.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

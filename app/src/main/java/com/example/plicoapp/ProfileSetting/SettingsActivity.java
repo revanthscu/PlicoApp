@@ -1,4 +1,4 @@
-package com.example.plicoapp;
+package com.example.plicoapp.ProfileSetting;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-;import com.google.android.material.slider.RangeSlider;
+;import com.example.plicoapp.R;
+import com.google.android.material.slider.RangeSlider;
 
 public class SettingsActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 

@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.example.plicoapp.R;
-import com.example.plicoapp.ViewOtherUserProfileActivity;
 
 import java.util.List;
 

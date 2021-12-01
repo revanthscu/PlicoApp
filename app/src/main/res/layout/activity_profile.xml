@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyProfileActivity">
+    tools:context=".ProfileSetting.MyProfileActivity">
     <!-- top navigation -->
 
     <include layout="@layout/layout_top_navigation_back" />
@@ -18,7 +18,7 @@
         android:background="@drawable/profile_bg"
         android:orientation="vertical"
         android:weightSum="10"
-        tools:context=".LoginActivity">
+        tools:context=".Registration.LoginActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

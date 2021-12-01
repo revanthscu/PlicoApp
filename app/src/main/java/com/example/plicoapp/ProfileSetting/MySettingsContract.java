@@ -1,4 +1,4 @@
-package com.example.plicoapp;
+package com.example.plicoapp.ProfileSetting;
 
 public class MySettingsContract {
     private boolean bShowMen;

@@ -1,18 +1,16 @@
-package com.example.plicoapp;
+package com.example.plicoapp.Matching;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.plicoapp.R;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ViewOtherUserProfileActivity extends AppCompatActivity {
 

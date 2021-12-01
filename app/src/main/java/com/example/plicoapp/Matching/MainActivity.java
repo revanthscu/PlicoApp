@@ -18,9 +18,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.plicoapp.Chat.ChatActivity;
-import com.example.plicoapp.MyProfileActivity;
 import com.example.plicoapp.R;
-import com.example.plicoapp.ViewOtherUserProfileActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;

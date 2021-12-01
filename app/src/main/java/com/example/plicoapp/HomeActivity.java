@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.plicoapp.Registration.BirthdayActivity;
+
 public class HomeActivity extends AppCompatActivity {
     public static final String TAG = "HomeActivity";
     public static final String start = "onstart";

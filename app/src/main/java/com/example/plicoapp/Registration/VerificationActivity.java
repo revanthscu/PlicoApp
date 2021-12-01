@@ -1,15 +1,16 @@
-package com.example.plicoapp;
+package com.example.plicoapp.Registration;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BirthdayActivity extends AppCompatActivity{
-    public static final String TAG = "MainActivity";
+import com.example.plicoapp.Registration.LoginActivity;
+
+public class VerificationActivity extends AppCompatActivity {
+    public static final String TAG = "HomeActivity";
     public static final String start = "onstart";
     public static final String resume = "onresume";
     public static final String onPause = "onpause";
@@ -18,31 +19,25 @@ public class BirthdayActivity extends AppCompatActivity{
     public static final String destroy = "ondestroy";
     String name = "";
 
-    EditText et_date;
 
-    Bundle bundle;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_birthday);
+//        setContentView(R.layout.);
 
-        bundle = getIntent().getExtras();
-
-        et_date = findViewById(R.id.date);
 
     }
 
-    public void submit(View view) {
-        String date = et_date.getText().toString().trim();
+    public void submit(View view){
 
-        bundle.putString("DATE", date);
-
-
-        Intent intent = new Intent(this, GenderActivity.class);
-        intent.putExtras(bundle);
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("name", name);
         this.startActivity(intent);
     }
+
+
+
 
     protected void onStart() {
         super.onStart();
@@ -79,5 +74,3 @@ public class BirthdayActivity extends AppCompatActivity{
         Log.i(TAG, "On Destroy");
     }
 }
-
-
