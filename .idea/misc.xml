@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/active_user_item.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_dislike.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_birthday.xml" value="0.13177083333333334" />
+        <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_dislike.xml" value="0.1" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_like.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_edit_profile_old.xml" value="0.1" />
@@ -15,6 +16,8 @@
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_register_gender.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_register_home1.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/item.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/custom_circle.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/custom_seekbar_progress.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/custom_switch.xml" value="0.7051282051282052" />
@@ -79,7 +82,7 @@
         <entry key="app/src/main/res/layout/activity_btn_like.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/layout/activity_chatscreen.xml" value="0.15648148148148147" />
-        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_edit_profile_old.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_gender.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_hobby.xml" value="0.26666666666666666" />
@@ -112,7 +115,6 @@
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/registration.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/termsofuse.xml" value="0.26149131767109296" />
-        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3416666666666667" />
       </map>
     </option>
   </component>
