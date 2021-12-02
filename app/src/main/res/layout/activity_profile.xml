@@ -9,7 +9,12 @@
     tools:context=".ProfileSetting.MyProfileActivity">
     <!-- top navigation -->
 
-    <include layout="@layout/layout_top_navigation_back" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.App.BottomNavigationView"
+        app:menu="@menu/bottom_navigation_menu" />
 
 
     <LinearLayout
@@ -101,6 +106,7 @@
             android:layout_weight="3"></LinearLayout>
 
         <!--dfs-->
+
     </LinearLayout>
 
 

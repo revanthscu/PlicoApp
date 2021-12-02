@@ -25,10 +25,12 @@
         </activity>
         <activity android:name=".Registration.VerificationActivity" />
         <activity android:name=".Registration.BirthdayActivity"/>
-        <activity android:name=".ProfileSetting.EditProfileActivity"/>
+        <activity android:name=".ProfileSetting.EditProfileActivity"
+            android:parentActivityName=".ProfileSetting.MyProfileActivity"/>
         <activity android:name=".Registration.GenderActivity"/>
         <activity android:name=".ProfileSetting.MyProfileActivity" />
-        <activity android:name=".ProfileSetting.SettingsActivity"/>
+        <activity android:name=".ProfileSetting.SettingsActivity"
+            android:parentActivityName=".ProfileSetting.MyProfileActivity"/>
         <activity android:name=".Registration.TermsActivity"/>
         <activity android:name=".Matching.ViewOtherUserProfileActivity"/>
         <activity android:name=".Registration.HobbyActivity"/>

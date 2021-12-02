@@ -52,6 +52,8 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+
+
         uid = mAuth.getCurrentUser().getUid();
 
         DocumentReference docRef = db.collection("Users").document(uid);
@@ -69,9 +71,17 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                         distance = Integer.parseInt(doc.get("distance").toString());
                         gender = doc.get("gender").toString();
                         pGender = doc.get("pgender").toString();
-                        job = doc.get("job").toString();
-                        company = doc.get("company").toString();
-                        school = doc.get("school").toString();
+
+                        if(!(doc.get("job") == null) && !(doc.get("company")== null) && !(doc.get("school") == null)) {
+                            job = doc.get("job").toString();
+                            company = doc.get("company").toString();
+                            school = doc.get("school").toString();
+                        } else {
+                            job = "enter job";
+                            company = "enter company";
+                            school = "enter school";
+                        }
+
 
                         Log.i("interests", interests.toString());
 

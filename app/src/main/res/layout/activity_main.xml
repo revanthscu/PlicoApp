@@ -145,7 +145,17 @@
                     app:civ_border_color="@color/transparentPink"
                     app:civ_border_width="1dp" />
 
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:theme="@style/ThemeOverlay.App.BottomNavigationView"
+                app:menu="@menu/bottom_navigation_menu" />
+
         </RelativeLayout>
+
+
     </FrameLayout>
 
 </RelativeLayout>
