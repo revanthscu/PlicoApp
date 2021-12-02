@@ -102,7 +102,7 @@ public class ChatActivity extends AppCompatActivity {
                         .setValue(new ChatMessage(remoteInput.getCharSequence(EXTRA_VOICE_REPLY).toString(),
                                 FirebaseAuth.getInstance()
                                         .getCurrentUser()
-                                        .getDisplayName())
+                                        .getEmail().toString())
                         );
             }
         }

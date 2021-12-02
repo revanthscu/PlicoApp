@@ -6,5 +6,5 @@ android:shape="rectangle" android:padding="15dp">
     android:bottomLeftRadius="15dp"
     android:topLeftRadius="15dp"
     android:topRightRadius="15dp" />
-<stroke android:width="2dip" android:color="@color/white" />
+<stroke android:width="2dip" android:color="@color/link_blue" />
 </shape>
