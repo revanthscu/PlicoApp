@@ -31,6 +31,7 @@ import com.example.plicoapp.Chat.ChatActivity;
 import com.example.plicoapp.Matching.MainActivity;
 import com.example.plicoapp.Matching.Matched_Activity;
 import com.example.plicoapp.R;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,6 +43,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -58,12 +63,14 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
     Button b1,b2,b3,b4,b5,b6;
     EditProfileContract profileInfo;
     ChipGroup chipInterests;
-    String name, bio, profilePic, pGender, gender, job, company, school, uid;
+    String name, bio, profilePic, pGender, gender, job, company, school, uid, newProfilePic;
     private ArrayList interests;
     private Integer age, distance;
     public static final int CAMERA_REQUEST_CODE = 123;
     public static final int GALLERY_REQUEST_CODE = 124;
     private static int image_id=0;
+    File img;
+    Uri upUri;
 
     BottomNavigationView menu;
 
@@ -376,6 +383,53 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
 
     public void SaveData(View view) {
 
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        StorageReference ref = storageRef.child("images/"+upUri.getLastPathSegment());
+        UploadTask uploadTask = ref.putFile(upUri);
+        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw task.getException();
+                }
+
+                // Continue with the task to get the download URL
+                return ref.getDownloadUrl();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    newProfilePic = task.getResult().toString();
+                    Log.i("UPload Task", newProfilePic);
+
+                    DocumentReference uRef = db.collection("Users").document(profileInfo.getUid());
+
+                    uRef
+                            .update( "profilePic", newProfilePic)
+
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("TAG", "Error updating document", e);
+                                }
+                            });
+
+                } else {
+                    // Handle failures
+                    // ...
+                }
+            }
+        });
+
+
         bio = etAbout.getText().toString();
         job = etJob.getText().toString();
         company = etCompany.getText().toString();
@@ -398,6 +452,9 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                         Log.w("TAG", "Error updating document", e);
                     }
                 });
+
+
+
 
 
     }
@@ -541,7 +598,10 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                         ImageView v = (ImageView) findViewById(image_id);
                         v.setImageBitmap(selectedImage);
                         try {
-                            File img = bitmapToFile(selectedImage, "mypic");
+                            img = bitmapToFile(selectedImage, uid);
+                            upUri = Uri.fromFile(img);
+
+                            Log.i("IMAGEURI", img.getPath());
                             //save to firebase db
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -551,6 +611,7 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                     break;
                 case GALLERY_REQUEST_CODE:
                     if (resultCode == RESULT_OK) {
+                        upUri = data.getData();
                         Uri imageUri;
                         imageUri = data.getData();
                         ImageView v = (ImageView) findViewById(image_id);
