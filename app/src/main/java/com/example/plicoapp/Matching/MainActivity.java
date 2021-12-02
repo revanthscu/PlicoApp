@@ -423,12 +423,12 @@ public class MainActivity extends Activity {
         startActivity(i);
     }
 
-    public void MoreInfo(View view) {
+   /* public void MoreInfo(View view) {
 
         Intent i = new Intent(MainActivity.this, MyProfileActivity.class);
         startActivity(i);
 
-    }
+    }*/
 
 
     private void setMenu() {

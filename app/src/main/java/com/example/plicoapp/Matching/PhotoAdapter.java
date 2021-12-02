@@ -35,13 +35,13 @@ public class PhotoAdapter extends ArrayAdapter<Cards> {
 
         TextView name = convertView.findViewById(R.id.name);
         ImageView image = convertView.findViewById(R.id.image);
-        ImageButton btnInfo = convertView.findViewById(R.id.checkInfoBeforeMatched);
+        /*ImageButton btnInfo = convertView.findViewById(R.id.checkInfoBeforeMatched);*/
 
         name.setText(card_item.getName() + ", " + card_item.getAge());
-        btnInfo.setOnClickListener(new View.OnClickListener() {
+        /*btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
+                *//*
                 Intent intent = new Intent(mContext, ProfileCheckinMain.class);
                 intent.putExtra("name", card_item.getName() + ", " + card_item.getAge());
                 intent.putExtra("photo", card_item.getProfileImageUrl());
@@ -50,12 +50,12 @@ public class PhotoAdapter extends ArrayAdapter<Cards> {
                 intent.putExtra("distance", card_item.getDistance());
                 mContext.startActivity(intent);
 
-                 */
+                 *//*
 
                 Intent i = new Intent(mContext, ViewOtherUserProfileActivity.class);
                 mContext.startActivity(i);
             }
-        });
+        });*/
 
         name.setText(card_item.getName() + ", " + card_item.getAge());
 
