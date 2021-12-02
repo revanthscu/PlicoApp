@@ -219,13 +219,13 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                     if (doc.exists()) {
                         name = doc.get("name").toString();
                         profileInfo.setAge(Integer.parseInt(doc.get("age").toString()));
-
+                       
                         photos.add(doc.get("profilePic").toString());
-                        photos.add("https://st4.depositphotos.com/9998432/22812/v/1600/depositphotos_228123786-stock-illustration-person-gray-photo-placeholder-woman.jpg");
-                        photos.add("https://st4.depositphotos.com/9998432/22812/v/1600/depositphotos_228123786-stock-illustration-person-gray-photo-placeholder-woman.jpg");
-                        photos.add("https://st4.depositphotos.com/9998432/22812/v/1600/depositphotos_228123786-stock-illustration-person-gray-photo-placeholder-woman.jpg");
-                        photos.add("https://st4.depositphotos.com/9998432/22812/v/1600/depositphotos_228123786-stock-illustration-person-gray-photo-placeholder-woman.jpg");
-                        photos.add("https://st4.depositphotos.com/9998432/22812/v/1600/depositphotos_228123786-stock-illustration-person-gray-photo-placeholder-woman.jpg");
+                        photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
+                        photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
+                        photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
+                        photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
+                        photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
                         profileInfo.setPhotos(photos);
 
                         bio = doc.get("bio").toString();
@@ -384,7 +384,8 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
     public void showOptions() {
 
         final CharSequence[] options = {"Take photo", "Choose from gallery"};
-        AlertDialog.Builder ad = new AlertDialog.Builder(EditProfileActivity.this);
+        AlertDialog.Builder ad = new AlertDialog.Builder(EditProfileActivity.this,R.style.MyDialog_Style);
+
         // ad.setMessage("Select an action:");
         ad.setItems(options, new DialogInterface.OnClickListener() {
             @Override
@@ -451,7 +452,7 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
 
 
         AlertDialog.Builder ad;
-        ad = new AlertDialog.Builder(this);
+        ad = new AlertDialog.Builder(this,R.style.MyDialog_Style);
 
         ad.setMessage(message);
 

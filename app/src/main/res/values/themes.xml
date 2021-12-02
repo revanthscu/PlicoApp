@@ -23,4 +23,6 @@
         <item name="colorOnPrimary">@color/link_blue</item>
         <item name="iconTint">@color/link_blue</item>
     </style>
+    <style name="MyDialog.Style"  parent="Theme.AppCompat.Dialog">
+    </style>
 </resources>
