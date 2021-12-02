@@ -29,6 +29,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Matched_Activity extends AppCompatActivity {
@@ -44,6 +45,7 @@ public class Matched_Activity extends AppCompatActivity {
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
     BottomNavigationView menu;
+    private Cards myCard;
     private EditText search;
     private List<Cards> usersList = new ArrayList<>();
     private RecyclerView recyclerView, mRecyclerView;
@@ -80,6 +82,7 @@ public class Matched_Activity extends AppCompatActivity {
                                 Integer.parseInt(doc.get("distance").toString()),
                                 doc.get("gender").toString(),
                                 (ArrayList) doc.get("likes"));
+                        myCard = cards;
                         myMatches = (ArrayList)doc.get("matches");
                         Log.i("myMatches", myMatches.toString());
 
@@ -132,11 +135,43 @@ public class Matched_Activity extends AppCompatActivity {
 
 
 
-        mAdapter = new MatchUserAdapter(matchList, getApplicationContext());
+
+        mAdapter = new MatchUserAdapter(matchList, getApplicationContext(), new MatchUserAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Cards item) {
+                ArrayList<String> commonInterests = new ArrayList<String>();
+
+                commonInterests = (ArrayList<String>) myCard.getInterest().stream().filter(item.getInterest()::contains).collect(Collectors.toList());
+
+                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
+
+
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("UID", item.getUserId());
+                bundle2.putString("NAME", item.getName());
+                bundle2.putInt("AGE", item.getAge());
+                bundle2.putString("PICTURE", item.getProfileImageUrl());
+                bundle2.putString("BIO", item.getBio());
+                bundle2.putStringArrayList("INTERESTS", commonInterests);
+                bundle2.putInt("DISTANCE", item.getDistance());
+
+
+                Intent i = new Intent(mContext, ViewOtherUserProfileActivity.class);
+
+                i.putExtras(bundle2);
+                startActivity(i);
+            }
+        });
+
+
         RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager1);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
         mRecyclerView.setAdapter(mAdapter);
+
+
+
 
 
 

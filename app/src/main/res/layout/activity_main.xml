@@ -9,8 +9,12 @@
     android:orientation="vertical"
     tools:context=".Matching.MainActivity">
 
-    <include layout="@layout/layout_top_navigation_view"
-        android:id="@+id/topLevelNavBar"/>
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/celebrateMatch">
+
+    </nl.dionsegijn.konfetti.KonfettiView>
 
     <FrameLayout
         android:id="@+id/card_frame"

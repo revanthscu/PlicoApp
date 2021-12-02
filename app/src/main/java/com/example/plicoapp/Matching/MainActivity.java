@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -30,6 +31,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -38,6 +40,10 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
@@ -58,6 +64,7 @@ public class MainActivity extends Activity {
     private String gender, pgender, myUid;
     private ArrayList<String> likes;
     private ArrayList<String> matches;
+    private KonfettiView celebrateMatch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +72,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         setMenu();
+
+        celebrateMatch = findViewById(R.id.celebrateMatch);
 
         pgender = "";
 
@@ -234,7 +243,8 @@ public class MainActivity extends Activity {
 
                 checkIfMatch(obj);
 
-                //check matches
+                postLikes();
+
                 checkRowItem();
 
             }
@@ -303,7 +313,7 @@ public class MainActivity extends Activity {
         DocumentReference uRef = db.collection("Users").document(myUid);
 
         uRef
-                .update("likes", likes, "matches", matches)
+                .update("likes", FieldValue.arrayUnion(likes.toArray()), "matches", FieldValue.arrayUnion(matches.toArray()))
 
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -322,9 +332,23 @@ public class MainActivity extends Activity {
 
 
     public void sendNotification() {
-        NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "matched!");
+        NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "CONGRATS ITS A MATCH!");
+
+        celebrateMatch.build()
+                .addColors(Color.BLUE, Color.RED, Color.MAGENTA)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.Square.INSTANCE, Shape.Circle.INSTANCE)
+                .addSizes(new Size(12, 5f))
+                .setPosition(-50f, celebrateMatch.getWidth() + 50f, -50f, -50f)
+                .streamFor(300, 5000L);
 
         mNotificationHelper.getManager().notify(1, nb.build());
+
+
+
     }
 
 

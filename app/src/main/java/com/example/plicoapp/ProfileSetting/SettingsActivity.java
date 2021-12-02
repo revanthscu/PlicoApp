@@ -3,12 +3,20 @@ package com.example.plicoapp.ProfileSetting;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-;import com.example.plicoapp.R;
+import android.widget.Toast;
+;import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.Matching.MainActivity;
+import com.example.plicoapp.Matching.Matched_Activity;
+import com.example.plicoapp.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.slider.RangeSlider;
 
 public class SettingsActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
@@ -17,6 +25,7 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
     private SeekBar distBar;
     private RangeSlider ageBar;
     private TextView distance_text,age_range;
+    BottomNavigationView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,7 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
         setGenderSwitches();
         setNotifs();
         setDistance();
+        setMenu();
 
         ageBar =(RangeSlider) findViewById(R.id.sb_ageRange);
         ageBar.setValues(20f,50f);
@@ -103,6 +113,46 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
         MsgLikes.setOnCheckedChangeListener(this);
         Msg = (SwitchCompat) findViewById(R.id.msg);
         Msg.setOnCheckedChangeListener(this);
+    }
+
+    private void setMenu() {
+
+        menu = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.i_cards:
+                        Toast.makeText(getApplicationContext(),"Swipe activity", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        return true;
+                    case R.id.i_likes:
+                        Toast.makeText(getApplicationContext(),"Likes tracking activity", Toast.LENGTH_LONG).show();
+
+                        Intent i2 = new Intent(getApplicationContext(), Matched_Activity.class);
+                        startActivity(i2);
+
+
+                        return true;
+                    case R.id.i_chat:
+                        Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
+
+                        Intent i3 = new Intent(getApplicationContext(), ChatActivity.class);
+                        startActivity(i3);
+                        return true;
+                    case R.id.i_profile:
+                        //my profile activity
+                        Intent i4 = new Intent(getApplicationContext(), MyProfileActivity.class);
+                        startActivity(i4);
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 
 }

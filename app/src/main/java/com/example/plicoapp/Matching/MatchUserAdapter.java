@@ -15,12 +15,19 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyViewHolder> {
+
+    public interface OnItemClickListener {
+        void onItemClick(Cards item);
+    }
+
+    private final OnItemClickListener listener;
     List<Cards> usersList;
     Context context;
 
-    public MatchUserAdapter(List<Cards> usersList, Context context) {
+    public MatchUserAdapter(List<Cards> usersList, Context context, OnItemClickListener listener) {
         this.usersList = usersList;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull

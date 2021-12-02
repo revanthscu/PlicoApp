@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../layout/custom_preview.xml" value="0.1" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/active_user_item.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_dislike.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_like.xml" value="0.13020833333333334" />
