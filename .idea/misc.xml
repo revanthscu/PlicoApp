@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared - Copy (2)/PlicoApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/active_user_item.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_dislike.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_btn_like.xml" value="0.13020833333333334" />
@@ -16,12 +15,25 @@
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_register_gender.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_register_home1.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Teaching/AndroidStudioProjects/PlicoAppShared/PlicoApp/app/src/main/res/layout/activity_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/custom_circle.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/custom_seekbar_progress.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/custom_switch.xml" value="0.7051282051282052" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/dislike_border.xml" value="0.7161458333333334" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/edit_text_focused_bg.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/gradient.xml" value="0.7051282051282052" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/gradient_login.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/gradient_primary.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/gradient_secondary.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/ic_lens_black_24dp.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/ic_menu_camera.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/round_button_with_border.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/rounded_corner_layout.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/rounded_edittext.xml" value="0.7051282051282052" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/seek_bar_thumb.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/side_nav_bar.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/white_grey_border_bottom.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/drawable/white_rounded_button.xml" value="0.7051282051282052" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/active_user_item.xml" value="0.2957427536231884" />
@@ -35,14 +47,14 @@
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_hobby.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_introduction_main.xml" value="0.6" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_main.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_matched.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_matched.xml" value="0.6" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_profile.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_profile_checkin_main.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_profile_checkin_matched.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_profile_old.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_register_age.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_register_gender.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_register_gender.xml" value="0.33" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_register_gender_prefection.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_register_hobby.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/hero9/Desktop/Files/Santa Clara University/Academics/5 - Fall 2021/COEN 268/PlicoAppTest/app/src/main/res/layout/activity_register_home1.xml" value="0.2957427536231884" />
@@ -68,7 +80,6 @@
         <entry key="app/src/main/res/drawable/edit_text_focused_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_close_black_24dp.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_main.xml" value="0.22916666666666666" />
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_manage.xml" value="0.1" />
@@ -81,7 +92,7 @@
         <entry key="app/src/main/res/layout/activity_btn_like.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/layout/activity_chatscreen.xml" value="0.15648148148148147" />
-        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_edit_profile_old.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_gender.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_hobby.xml" value="0.26666666666666666" />
@@ -114,7 +125,6 @@
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/registration.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/termsofuse.xml" value="0.26149131767109296" />
-        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3416666666666667" />
       </map>
     </option>
   </component>
