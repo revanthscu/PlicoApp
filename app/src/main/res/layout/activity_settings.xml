@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient_secondary"
     android:orientation="vertical"
     tools:context=".ProfileSetting.SettingsActivity">
 
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="@dimen/_5dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="@dimen/_5dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:visibility="visible"
-                app:cardCornerRadius="@dimen/_5dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -219,7 +219,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="@dimen/_5dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -342,7 +342,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="@dimen/_5dp"
                 app:cardUseCompatPadding="true">
 
@@ -359,7 +359,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -392,7 +392,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -440,7 +440,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="@dimen/_10dp"
+                android:backgroundTint="@color/colorPrimary"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 
@@ -454,8 +455,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text=" Logout"
-                        android:textColor="@color/black"
+                        android:text=" Log Out"
+                        android:textColor="@color/white"
 
                         android:textSize="18dp" />
 
@@ -466,7 +467,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="@dimen/_10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true">
 

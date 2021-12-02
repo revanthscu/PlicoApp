@@ -4,17 +4,30 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.bumptech.glide.Glide;
 import com.example.plicoapp.Chat.ChatActivity;
 import com.example.plicoapp.Matching.MainActivity;
 import com.example.plicoapp.Matching.Matched_Activity;
 import com.example.plicoapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -24,6 +37,8 @@ public class MyProfileActivity extends AppCompatActivity {
     CircleImageView ciw;
     TextView txtName;
     BottomNavigationView menu;
+ private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,26 +46,46 @@ public class MyProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         setMenu();
         setProfileObj();
-        setProfilePic();
-        setName();
+        //setProfilePic();
+        //setName();
     }
 
     private void setProfileObj() {
-        // call db
+     
         profileObj = new MyProfileContract();
-        profileObj.setPhoto(R.drawable.default_man);
-        profileObj.setFirstName("Priyanka");
-        profileObj.setLastName("Chopra");
-    }
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        profileObj.setUid(mAuth.getCurrentUser().getUid());
+        ArrayList<String> profilePics=new ArrayList<String>();
+        DocumentReference docRef = db.collection("Users").document(profileObj.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if (doc.exists()) {
+                        profileObj.setName(doc.get("name").toString());
+                        profileObj.setPhoto(doc.get("profilePic").toString());
+                        // Log.d("EditProf", "DocumentSnapshot data: " + doc.getData());
+                        setProfilePic();
+                        setName();
+                    } else {
+                        // Log.d("EditProf", "No such document");
+                    }
+                } else {
+                    //  Log.d("EditProf", "get failed with ", task.getException());
+                }
+            }
+        });    }
 
     private void setProfilePic() {
         ciw = (CircleImageView) findViewById(R.id.circle_profile_image);
-        ciw.setImageResource(profileObj.getPhoto());
+         Glide.with(getApplicationContext()).load(profileObj.getPhoto()).into(ciw);
     }
 
     private void setName() {
         txtName = (TextView) findViewById(R.id.profile_name);
-        txtName.setText(profileObj.getFirstName()+" "+profileObj.getLastName());
+        txtName.setText(profileObj.getName());
     }
 
     public void gotoSettings(View view) {

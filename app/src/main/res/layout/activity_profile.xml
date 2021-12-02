@@ -7,20 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ProfileSetting.MyProfileActivity">
-    <!-- top navigation -->
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.App.BottomNavigationView"
-        app:menu="@menu/bottom_navigation_menu" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/profile_bg"
+        android:background="@drawable/gradient_primary"
         android:orientation="vertical"
         android:weightSum="10"
         tools:context=".Registration.LoginActivity">
@@ -103,7 +94,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3"></LinearLayout>
+            android:layout_weight="7"></LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.App.BottomNavigationView"
+            app:menu="@menu/bottom_navigation_menu" />
 
         <!--dfs-->
 

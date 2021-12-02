@@ -20,7 +20,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:background="@drawable/white_grey_border_bottom"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="@dimen/_10dp"
         app:cardElevation="4dp">
 
         <LinearLayout

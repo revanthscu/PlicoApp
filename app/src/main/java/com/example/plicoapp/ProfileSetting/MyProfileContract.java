@@ -1,37 +1,38 @@
 package com.example.plicoapp.ProfileSetting;
 
 public class MyProfileContract {
-    private int photo;
-    private String firstName;
-    private String lastName;
+    private String photo;
+    private String name;
+    private String uid;
 
     public MyProfileContract() {
-        this.photo = 0;
-        this.firstName = "";
-        this.lastName = "";
+        this.photo = "";
+        this.name = "";
+        this.uid = "";
+
     }
 
-    public int getPhoto() {
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(int photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }

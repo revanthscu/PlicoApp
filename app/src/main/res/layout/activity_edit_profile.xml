@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient_secondary"
     android:orientation="vertical"
     tools:context=".ProfileSetting.EditProfileActivity">
 
@@ -33,7 +33,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/backgroungColor"
                     android:orientation="vertical"
                     android:visibility="visible">
 
@@ -329,22 +328,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:paddingTop="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
-
-                    <Button
-                        android:id="@+id/Save"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Save"
-                        android:textColor="@color/black"
-                        android:textSize="22dp"
-                        android:backgroundTint="@color/gray_btn_bg_color"
-                        android:textAlignment="center"
-                        android:onClick="SaveData"
-                        >
-
-                    </Button>
 
                     <TextView
                         android:id="@+id/txtAbout"
@@ -601,6 +587,19 @@
 
                     </RelativeLayout>
 
+                    <Button
+                        android:id="@+id/Save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:text="Save"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"
+                        android:background="@drawable/white_rounded_button"
+                        android:textAlignment="center"
+                        android:onClick="SaveData">
+
+                    </Button>
 
 
                 </LinearLayout>
