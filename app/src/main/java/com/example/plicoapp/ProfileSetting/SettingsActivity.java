@@ -16,8 +16,10 @@ import android.widget.Toast;
 import com.example.plicoapp.Matching.MainActivity;
 import com.example.plicoapp.Matching.Matched_Activity;
 import com.example.plicoapp.R;
+import com.example.plicoapp.Registration.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.slider.RangeSlider;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
@@ -67,6 +69,9 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
 
 
     public void Logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 
     public void setGenderSwitches (){

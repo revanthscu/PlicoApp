@@ -344,16 +344,11 @@
                     <EditText
                         android:id="@+id/etAbout"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/rounded_edittext_states"
                         android:gravity="bottom"
                         android:hint="Write something about you" />
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@color/colorAccent" />
                     <TextView
                         android:id="@+id/txtInterest"
                         android:layout_width="wrap_content"
@@ -385,16 +380,12 @@
                         android:id="@+id/etJob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/rounded_edittext_states"
                         android:gravity="bottom"
                         android:hint="Add job title"
+                        app:boxBackgroundMode="none"
                         android:padding="@dimen/_5dp" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@color/colorAccent" />
 
                     <TextView
                         android:id="@+id/txtCompany"
@@ -409,16 +400,12 @@
                         android:id="@+id/etCompany"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/rounded_edittext_states"
                         android:gravity="bottom"
                         android:hint="Add company"
+                        app:boxBackgroundMode="none"
                         android:padding="@dimen/_5dp" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@color/colorAccent" />
 
                     <TextView
                         android:id="@+id/txtSchool"
@@ -433,16 +420,13 @@
                         android:id="@+id/etSchool"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
+                        android:background="@drawable/rounded_edittext_states"
                         android:gravity="bottom"
                         android:hint="Add school"
+                        app:boxBackgroundMode="none"
                         android:padding="@dimen/_5dp" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@color/colorAccent" />
+
 
                     <TextView
                         android:id="@+id/txtGender"
