@@ -2,6 +2,7 @@ package com.example.plicoapp.Matching;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -65,6 +66,7 @@ public class MainActivity extends Activity {
     private ArrayList<String> likes;
     private ArrayList<String> matches;
     private KonfettiView celebrateMatch;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +74,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         setMenu();
-
-        celebrateMatch = findViewById(R.id.celebrateMatch);
 
         pgender = "";
 
@@ -332,7 +332,17 @@ public class MainActivity extends Activity {
 
 
     public void sendNotification() {
-        NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "CONGRATS ITS A MATCH!");
+        //NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "CONGRATS ITS A MATCH!");
+        //mNotificationHelper.getManager().notify(1, nb.build());
+
+        dialog = new Dialog(mContext); // Context, this, etc.
+        dialog.setContentView(R.layout.match_dialogue);
+        dialog.setTitle("CONGRADULATIONS!!!!");
+        dialog.show();
+
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        celebrateMatch = dialog.findViewById(R.id.celebrateMatch);
+
 
         celebrateMatch.build()
                 .addColors(Color.BLUE, Color.RED, Color.MAGENTA)
@@ -345,12 +355,12 @@ public class MainActivity extends Activity {
                 .setPosition(-50f, celebrateMatch.getWidth() + 50f, -50f, -50f)
                 .streamFor(300, 5000L);
 
-        mNotificationHelper.getManager().notify(1, nb.build());
-
-
 
     }
 
+    public void cancelNoti(View v) {
+        dialog.dismiss();
+    }
 
     public void DislikeBtn(View v) {
         if (rowItems.size() != 0) {

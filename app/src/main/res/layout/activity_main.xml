@@ -9,12 +9,7 @@
     android:orientation="vertical"
     tools:context=".Matching.MainActivity">
 
-    <nl.dionsegijn.konfetti.KonfettiView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/celebrateMatch">
 
-    </nl.dionsegijn.konfetti.KonfettiView>
 
     <FrameLayout
         android:id="@+id/card_frame"
@@ -22,11 +17,15 @@
         android:layout_height="match_parent"
         android:layout_marginTop="0dp">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_primary"
             android:orientation="vertical">
+
+
+
 
             <!-- top navigation -->
 
