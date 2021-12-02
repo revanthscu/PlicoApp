@@ -18,6 +18,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -26,11 +27,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.Matching.MainActivity;
+import com.example.plicoapp.Matching.Matched_Activity;
 import com.example.plicoapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.auth.FirebaseAuth;
@@ -60,6 +65,8 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
     public static final int GALLERY_REQUEST_CODE = 124;
     private static int image_id=0;
 
+    BottomNavigationView menu;
+
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
@@ -68,6 +75,7 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         setInfoObj();
+        setMenu();
         setImageClicks();
     }
 
@@ -562,5 +570,46 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
 
         image_id=image_view_1;
         showOptions();
+    }
+
+
+    private void setMenu() {
+
+        menu = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.i_cards:
+                        Toast.makeText(getApplicationContext(),"Swipe activity", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        return true;
+                    case R.id.i_likes:
+                        Toast.makeText(getApplicationContext(),"Likes tracking activity", Toast.LENGTH_LONG).show();
+
+                        Intent i2 = new Intent(getApplicationContext(), Matched_Activity.class);
+                        startActivity(i2);
+
+
+                        return true;
+                    case R.id.i_chat:
+                        Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
+
+                        Intent i3 = new Intent(getApplicationContext(), ChatActivity.class);
+                        startActivity(i3);
+                        return true;
+                    case R.id.i_profile:
+                        //my profile activity
+                        Intent i4 = new Intent(getApplicationContext(), MyProfileActivity.class);
+                        startActivity(i4);
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 }
