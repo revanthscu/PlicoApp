@@ -6,10 +6,11 @@ public class Cards {
     private String userId;
     private String name, profileImageUrl, bio, interest, gender;
     private ArrayList<String> interests;
+    private ArrayList<String> likedPeople;
     private int age;
     private int distance;
 
-    public Cards(String userId, String name, int age, String profileImageUrl, String bio, ArrayList interests, int distance, String gender) {
+    public Cards(String userId, String name, int age, String profileImageUrl, String bio, ArrayList interests, int distance, String gender, ArrayList likedPeople) {
         this.userId = userId;
         this.name = name;
         this.age = age;
@@ -18,6 +19,7 @@ public class Cards {
         this.interests = interests;
         this.distance = distance;
         this.gender = gender;
+        this.likedPeople = likedPeople;
     }
 
     public Cards(String profileImageUrl) {
@@ -75,5 +77,11 @@ public class Cards {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public ArrayList getLikedPeople() {
+        return likedPeople;
+    }
+
+    public void setLikedPeople(ArrayList<String> likes) {this.likedPeople = likes;}
 }
 

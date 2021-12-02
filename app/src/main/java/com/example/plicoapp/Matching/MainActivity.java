@@ -23,6 +23,8 @@ import com.example.plicoapp.Chat.ChatActivity;
 import com.example.plicoapp.ProfileSetting.MyProfileActivity;
 import com.example.plicoapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,8 +54,9 @@ public class MainActivity extends Activity {
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
     BottomNavigationView menu;
-    Cards myCard;
-    String gender, pgender, myUid;
+    private Cards myCard;
+    private String gender, pgender, myUid;
+    private ArrayList<String> likes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,7 @@ public class MainActivity extends Activity {
 
         rowItems = new ArrayList<Cards>();
         tempRowItems = new ArrayList<Cards>();
+        likes = new ArrayList<String>();
         // start pulsator
         /*
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
@@ -97,7 +101,8 @@ public class MainActivity extends Activity {
                                 doc.get("bio").toString(),
                                 (ArrayList) doc.get("interests"),
                                 Integer.parseInt(doc.get("distance").toString()),
-                                doc.get("gender").toString());
+                                doc.get("gender").toString(),
+                                (ArrayList) doc.get("likes"));
                         gender = doc.get("gender").toString();
                         pgender = doc.get("pgender").toString();
                         myCard = cards;
@@ -125,7 +130,14 @@ public class MainActivity extends Activity {
                                         doc.get("bio").toString(),
                                         (ArrayList) doc.get("interests"),
                                         Integer.parseInt(doc.get("distance").toString()),
-                                        doc.get("gender").toString());
+                                        doc.get("gender").toString(),
+                                        (ArrayList) doc.get("likes"));
+
+                                if (cards.getLikedPeople() == null) {
+                                    ArrayList<String> liked = new ArrayList<String>();
+                                    liked.add("9GDLnkN04mS12IBZ0dtpb7tZwNH2");
+                                    cards.setLikedPeople(liked);
+                                }
 
                                 if (pgender.equals(doc.get("gender").toString()) && !myUid.equals(doc.getId())){
                                     //rowItems.add(cards);
@@ -253,6 +265,10 @@ public class MainActivity extends Activity {
             @Override
             public void onRightCardExit(Object dataObject) {
                 Cards obj = (Cards) dataObject;
+                likes.add(obj.getUserId());
+
+                checkIfMatch(obj);
+
                 //check matches
                 checkRowItem();
 
@@ -260,7 +276,9 @@ public class MainActivity extends Activity {
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
-                // Ask for more data here
+                if (itemsInAdapter == 1) {
+                    postLikes();
+                }
 
 
             }
@@ -307,6 +325,35 @@ public class MainActivity extends Activity {
         checkRowItem();
     }
 
+    private void checkIfMatch(Cards card) {
+
+        if (card.getLikedPeople().contains(myUid)) {
+            sendNotification();
+        }
+    }
+
+    private void postLikes() {
+
+        DocumentReference uRef = db.collection("Users").document(myUid);
+
+        uRef
+                .update("likes", likes)
+
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("TAG", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error updating document", e);
+                    }
+                });
+
+    }
+
 
     public void sendNotification() {
         NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "matched!");
@@ -318,6 +365,8 @@ public class MainActivity extends Activity {
     public void DislikeBtn(View v) {
         if (rowItems.size() != 0) {
             Cards card_item = rowItems.get(0);
+
+
 
             String userId = card_item.getUserId();
 
