@@ -139,6 +139,7 @@ public class Matched_Activity extends AppCompatActivity {
         mAdapter = new MatchUserAdapter(matchList, getApplicationContext(), new MatchUserAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Cards item) {
+
                 ArrayList<String> commonInterests = new ArrayList<String>();
 
                 commonInterests = (ArrayList<String>) myCard.getInterest().stream().filter(item.getInterest()::contains).collect(Collectors.toList());

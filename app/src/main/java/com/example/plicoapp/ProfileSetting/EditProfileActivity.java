@@ -227,7 +227,7 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                     if (doc.exists()) {
                         name = doc.get("name").toString();
                         profileInfo.setAge(Integer.parseInt(doc.get("age").toString()));
-                       
+                        profilePic = doc.get("profilePic").toString().trim();
                         photos.add(doc.get("profilePic").toString());
                         photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
                         photos.add("https://thumbs.dreamstime.com/b/default-female-avatar-profile-picture-icon-woman-photo-placeholder-vector-illustration-88413632.jpg");
@@ -251,14 +251,27 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
                         pGender = doc.get("pgender").toString();
                         profileInfo.setPrefGender(pGender);
 
-                        //job = doc.get("job").toString();
-                        profileInfo.setJobTitle("Software Engineer");
+                        if(!(doc.get("job") == null) && !(doc.get("company") == null) && !(doc.get("school") == null)) {
 
-                        //company = doc.get("company").toString();
-                        profileInfo.setCompany("ABC Corporation");
+                            profileInfo.setJobTitle(doc.get("job").toString());
 
-                        //school = doc.get("school").toString();
-                        profileInfo.setSchool("Santa Clara University");
+                            //company = doc.get("company").toString();
+                            profileInfo.setCompany(doc.get("company").toString());
+
+                            //school = doc.get("school").toString();
+                            profileInfo.setSchool(doc.get("school").toString());
+                        } else {
+                            //job = doc.get("job").toString();
+                            profileInfo.setJobTitle("Software Engineer");
+
+                            //company = doc.get("company").toString();
+                            profileInfo.setCompany("ABC Corporation");
+
+                            //school = doc.get("school").toString();
+                            profileInfo.setSchool("Santa Clara University");
+                        }
+
+
 
 
                         profileInfo.setbShowAge(true);

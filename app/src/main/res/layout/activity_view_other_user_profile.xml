@@ -8,7 +8,13 @@
     android:orientation="vertical"
     tools:context=".Matching.ViewOtherUserProfileActivity">
 
-    <include layout="@layout/layout_top_navigation_back" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/ThemeOverlay.App.BottomNavigationView"
+        app:menu="@menu/bottom_navigation_menu" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/gradient_secondary"
                     android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="400dp"

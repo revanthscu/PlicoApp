@@ -1,12 +1,20 @@
 package com.example.plicoapp.Matching;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.ProfileSetting.MyProfileActivity;
 import com.example.plicoapp.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
@@ -23,12 +31,14 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
     private String uid, name, profileImageUrl, bio;
     private ArrayList interests;
     private Integer age, distance;
+    BottomNavigationView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_other_user_profile);
 
+        setMenu();
         Bundle bundle = getIntent().getExtras();
 
         uid = bundle.getString("UID");
@@ -57,8 +67,10 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
     }
 
     private void setProfilePic() {
-        profilePic = (ImageView) findViewById(R.id.image_view_3);
-        profilePic.setImageResource(infoObj.getprofilePic());
+        profilePic = (ImageView) findViewById(R.id.imageView3);
+        Glide.with(this)
+                .load(profileImageUrl)
+                .into(profilePic);
     }
 
     private void setInfoObj() {
@@ -124,5 +136,45 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
         iv4.setImageResource(ids[3]);
         iv5.setImageResource(ids[4]);
         iv6.setImageResource(ids[5]);
+    }
+
+    private void setMenu() {
+
+        menu = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.i_cards:
+                        Toast.makeText(getApplicationContext(),"Swipe activity", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        return true;
+                    case R.id.i_likes:
+                        Toast.makeText(getApplicationContext(),"Likes tracking activity", Toast.LENGTH_LONG).show();
+
+                        Intent i2 = new Intent(getApplicationContext(), Matched_Activity.class);
+                        startActivity(i2);
+
+
+                        return true;
+                    case R.id.i_chat:
+                        Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
+
+                        Intent i3 = new Intent(getApplicationContext(), ChatActivity.class);
+                        startActivity(i3);
+                        return true;
+                    case R.id.i_profile:
+                        //my profile activity
+                        Intent i4 = new Intent(getApplicationContext(), MyProfileActivity.class);
+                        startActivity(i4);
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 }

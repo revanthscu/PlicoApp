@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.plicoapp.R;
 
 import java.util.List;
@@ -45,8 +47,16 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
         holder.name.setText(users.getName());
         holder.profession.setText(users.getBio());
         if (users.getProfileImageUrl() != null) {
-            //Picasso.get().load(users.getProfileImageUrl()).into(holder.imageView);
+            Glide.with(context)
+                    .load(users.getProfileImageUrl())
+                    .into(holder.imageView);
         }
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                listener.onItemClick(users);
+            }
+        });
     }
 
     @Override
