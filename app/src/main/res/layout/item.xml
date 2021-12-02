@@ -90,17 +90,6 @@
                     android:textColor="@color/textColor"
                     android:textSize="20sp" />
 
-                <ImageButton
-                    android:id="@+id/checkInfoBeforeMatched"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:scaleType="fitXY"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/white"
-                    android:src="@drawable/ic_info"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:onClick="MoreInfo"/>
-
             </LinearLayout>
 
         </LinearLayout>
