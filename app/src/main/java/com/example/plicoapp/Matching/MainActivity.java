@@ -303,6 +303,8 @@ public class MainActivity extends Activity {
 
     private void checkIfMatch(Cards card) {
 
+
+
         if (card.getLikedPeople().contains(myUid)) {
             sendNotification();
             matches.add(card.getUserId());
@@ -333,8 +335,8 @@ public class MainActivity extends Activity {
 
 
     public void sendNotification() {
-        //NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "CONGRATS ITS A MATCH!");
-        //mNotificationHelper.getManager().notify(1, nb.build());
+        NotificationCompat.Builder nb = mNotificationHelper.getChannel1Notification(mContext.getString(R.string.app_name), "CONGRATS ITS A MATCH!");
+        mNotificationHelper.getManager().notify(1, nb.build());
 
         dialog = new Dialog(mContext); // Context, this, etc.
         dialog.setContentView(R.layout.match_dialogue);

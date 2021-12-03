@@ -85,7 +85,7 @@ public class Matched_Activity extends AppCompatActivity {
                                 (ArrayList) doc.get("likes"));
                         myCard = cards;
 
-                        if (!(myMatches.isEmpty())) {
+                        if(!(myMatches== null)) {
                             myMatches = (ArrayList)doc.get("matches");
                             for(String uid : myMatches) {
                                 DocumentReference docR = db.collection("Users").document(uid);
