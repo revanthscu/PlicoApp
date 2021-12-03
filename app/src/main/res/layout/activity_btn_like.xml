@@ -64,17 +64,6 @@
                 android:padding="10dp"
                 android:src="@drawable/ic_dislike" />
 
-            <ImageButton
-                android:id="@+id/commentbtn"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:scaleType="fitXY"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/round_button_with_border"
-                android:padding="10dp"
-                android:src="@drawable/ic_comment" />
-
 
             <ImageButton
                 android:id="@+id/likebtn"
