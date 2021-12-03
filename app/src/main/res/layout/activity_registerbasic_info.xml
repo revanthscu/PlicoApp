@@ -106,7 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/rounded_edittext"
-                        android:hint="Enter your Username "
+                        android:hint="Enter your First Name "
                         android:inputType="textEmailAddress"
                         android:padding="5dp" />
                 </com.google.android.material.textfield.TextInputLayout>
