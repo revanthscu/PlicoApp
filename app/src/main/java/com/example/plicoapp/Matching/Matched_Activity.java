@@ -84,40 +84,42 @@ public class Matched_Activity extends AppCompatActivity {
                                 doc.get("gender").toString(),
                                 (ArrayList) doc.get("likes"));
                         myCard = cards;
-                        myMatches = (ArrayList)doc.get("matches");
-                        Log.i("myMatches", myMatches.toString());
 
-                        for(String uid : myMatches) {
-                            DocumentReference docR = db.collection("Users").document(uid);
-                            docR.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    if (task.isSuccessful()) {
-                                        DocumentSnapshot doc = task.getResult();
-                                        if (doc.exists()) {
-                                            Cards cards = new Cards(doc.get("uid").toString(),
-                                                    doc.get("name").toString(),
-                                                    Integer.parseInt(doc.get("age").toString()),
-                                                    doc.get("profilePic").toString(),
-                                                    doc.get("bio").toString(),
-                                                    (ArrayList) doc.get("interests"),
-                                                    Integer.parseInt(doc.get("distance").toString()),
-                                                    doc.get("gender").toString(),
-                                                    (ArrayList) doc.get("likes"));
-                                            Log.i("Match", cards.getName());
-                                            matchList.add(cards);
-                                            mAdapter.notifyDataSetChanged();
+                        if (!(myMatches.isEmpty())) {
+                            myMatches = (ArrayList)doc.get("matches");
+                            for(String uid : myMatches) {
+                                DocumentReference docR = db.collection("Users").document(uid);
+                                docR.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            DocumentSnapshot doc = task.getResult();
+                                            if (doc.exists()) {
+                                                Cards cards = new Cards(doc.get("uid").toString(),
+                                                        doc.get("name").toString(),
+                                                        Integer.parseInt(doc.get("age").toString()),
+                                                        doc.get("profilePic").toString(),
+                                                        doc.get("bio").toString(),
+                                                        (ArrayList) doc.get("interests"),
+                                                        Integer.parseInt(doc.get("distance").toString()),
+                                                        doc.get("gender").toString(),
+                                                        (ArrayList) doc.get("likes"));
+                                                Log.i("Match", cards.getName());
+                                                matchList.add(cards);
+                                                mAdapter.notifyDataSetChanged();
 
 
+                                            } else {
+                                                Log.d(TAG, "No such document");
+                                            }
                                         } else {
-                                            Log.d(TAG, "No such document");
+                                            Log.d(TAG, "get failed with ", task.getException());
                                         }
-                                    } else {
-                                        Log.d(TAG, "get failed with ", task.getException());
                                     }
-                                }
-                            });
+                                });
+                            }
                         }
+
 
 
                     } else {

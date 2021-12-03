@@ -93,7 +93,7 @@ public class TermsActivity extends AppCompatActivity {
         user.put("name", username);
         user.put("email", email);
         user.put("age", age);
-        user.put("profilePic", "http://www.gravatar.com/avatar/3b3be63a4c2a439b013787725dfce802?d=identicon");
+        user.put("profilePic", "https://st.depositphotos.com/2218212/2938/i/600/depositphotos_29387653-stock-photo-facebook-profile.jpg");
         user.put("bio", "Add your bio!");
         user.put("gender", gender);
         user.put("pgender", intogender);
