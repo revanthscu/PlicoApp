@@ -3,21 +3,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".Registration.HobbyActivity">
 
-    <TextView
-        android:id="@+id/numberOfPagesLeft"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginRight="24dp"
-        android:gravity="right"
-        android:text="5/5"
-        android:textColor="#747474"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -38,9 +29,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="60dp"
             android:text="Plico"
-            android:textColor="#ff0b00"
+            android:textColor="@color/logocolor"
             android:textSize="30dp" />
 
     </RelativeLayout>
@@ -80,7 +71,7 @@
                 android:text="SPORTS"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <Button
@@ -97,7 +88,7 @@
                 android:text="TRAVEL"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -120,7 +111,7 @@
                 android:text="MUSIC"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <Button
@@ -137,7 +128,7 @@
                 android:text="FISHING"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -160,7 +151,7 @@
                 android:text="TV SHOWS"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <Button
@@ -177,7 +168,7 @@
                 android:text="APP DEV"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -200,7 +191,7 @@
                 android:text="DANCE"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <Button
@@ -217,7 +208,7 @@
                 android:text="HIKING"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -240,7 +231,7 @@
                 android:text="CODING"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <Button
@@ -257,21 +248,20 @@
                 android:text="MOVIES"
                 android:backgroundTint="#ff4081"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/hobbiesContinueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="24dp"
-
-            android:backgroundTint="@android:color/holo_purple"
+            android:background="@drawable/white_rounded_button"
             android:elevation="24dp"
             android:onClick="onHobbyContinueClicked"
             android:text="Register"
