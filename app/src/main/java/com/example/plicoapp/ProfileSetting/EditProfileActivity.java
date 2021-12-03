@@ -386,49 +386,54 @@ public class EditProfileActivity extends AppCompatActivity implements CompoundBu
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-        StorageReference ref = storageRef.child("images/"+upUri.getLastPathSegment());
-        UploadTask uploadTask = ref.putFile(upUri);
-        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-            @Override
-            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                if (!task.isSuccessful()) {
-                    throw task.getException();
+
+        if(!(upUri==null)) {
+            StorageReference ref = storageRef.child("images/"+upUri.getLastPathSegment());
+            UploadTask uploadTask = ref.putFile(upUri);
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+
+                    // Continue with the task to get the download URL
+                    return ref.getDownloadUrl();
                 }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        newProfilePic = task.getResult().toString();
+                        Log.i("UPload Task", newProfilePic);
 
-                // Continue with the task to get the download URL
-                return ref.getDownloadUrl();
-            }
-        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-            @Override
-            public void onComplete(@NonNull Task<Uri> task) {
-                if (task.isSuccessful()) {
-                    newProfilePic = task.getResult().toString();
-                    Log.i("UPload Task", newProfilePic);
+                        DocumentReference uRef = db.collection("Users").document(profileInfo.getUid());
 
-                    DocumentReference uRef = db.collection("Users").document(profileInfo.getUid());
+                        uRef
+                                .update( "profilePic", newProfilePic)
 
-                    uRef
-                            .update( "profilePic", newProfilePic)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d("TAG", "DocumentSnapshot successfully updated!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("TAG", "Error updating document", e);
+                                    }
+                                });
 
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d("TAG", "DocumentSnapshot successfully updated!");
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w("TAG", "Error updating document", e);
-                                }
-                            });
-
-                } else {
-                    // Handle failures
-                    // ...
+                    } else {
+                        // Handle failures
+                        // ...
+                    }
                 }
-            }
-        });
+            });
+        }
+
+
 
 
         bio = etAbout.getText().toString();
