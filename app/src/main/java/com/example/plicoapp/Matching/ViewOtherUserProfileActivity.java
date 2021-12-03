@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.Chat.ChatList;
 import com.example.plicoapp.ProfileSetting.MyProfileActivity;
 import com.example.plicoapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -163,7 +164,7 @@ public class ViewOtherUserProfileActivity extends AppCompatActivity {
                     case R.id.i_chat:
                         Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
 
-                        Intent i3 = new Intent(getApplicationContext(), ChatActivity.class);
+                        Intent i3 = new Intent(getApplicationContext(), ChatList.class);
                         startActivity(i3);
                         return true;
                     case R.id.i_profile:

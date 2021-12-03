@@ -38,6 +38,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private static final String TAG = "Firebase_MSG";
     BottomNavigationView menu;
+    String myUser;
 
     private static final int SIGN_IN_REQUEST_CODE = 1;
     public static final String EXTRA_VOICE_REPLY = "extra_voice_reply";
@@ -55,7 +56,8 @@ public class ChatActivity extends AppCompatActivity {
                             .createSignInIntentBuilder()
                             .build(), SIGN_IN_REQUEST_CODE);
         } else {
-            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("user", FirebaseAuth.getInstance().getCurrentUser().getDisplayName()).apply();
+            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("user", FirebaseAuth.getInstance().getCurrentUser().getEmail()).apply();
+            myUser = FirebaseAuth.getInstance().getCurrentUser().getEmail();
             displayChatMessages();
         }
         try {
@@ -118,17 +120,40 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
-                TextView messageText = (TextView)v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView)v.findViewById(R.id.message_time);
 
-                // Set their text
-                messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
+                if(!(model.getMessageUser() == null)) {
+                    TextView messageText = (TextView)v.findViewById(R.id.message_text);
+                    TextView messageUser = (TextView)v.findViewById(R.id.message_user);
+                    TextView messageTime = (TextView)v.findViewById(R.id.message_time);
 
-                // Format the date before showing it
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
-                        model.getMessageTime()));
+                    // Set their text
+                    messageText.setText(model.getMessageText());
+                    messageText.setBackgroundResource(R.drawable.outgoing_speech_bubble);
+                    messageUser.setText(model.getMessageUser());
+
+
+                    // Format the date before showing it
+                    messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                            model.getMessageTime()));
+
+
+                } else {
+                    TextView messageText = (TextView)v.findViewById(R.id.message_text);
+                    TextView messageUser = (TextView)v.findViewById(R.id.message_user);
+                    TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+
+                    // Set their text
+                    messageText.setText(model.getMessageText());
+                    messageText.setBackgroundResource(R.drawable.incoming_speech_bubble);
+                    messageUser.setText(model.getMessageUser());
+
+
+                    // Format the date before showing it
+                    messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                            model.getMessageTime()));
+
+                }
+
             }
         };
 
@@ -216,7 +241,7 @@ public class ChatActivity extends AppCompatActivity {
                     case R.id.i_chat:
                         Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
 
-                        Intent i3 = new Intent(getApplicationContext(), ChatActivity.class);
+                        Intent i3 = new Intent(getApplicationContext(), ChatList.class);
                         startActivity(i3);
                         return true;
                     case R.id.i_profile:

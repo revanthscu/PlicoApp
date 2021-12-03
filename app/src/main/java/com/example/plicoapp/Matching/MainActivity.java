@@ -22,6 +22,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.plicoapp.Chat.ChatActivity;
+import com.example.plicoapp.Chat.ChatList;
 import com.example.plicoapp.ProfileSetting.MyProfileActivity;
 import com.example.plicoapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -456,7 +457,7 @@ public class MainActivity extends Activity {
                     case R.id.i_chat:
                         Toast.makeText(getApplicationContext(),"Chat activity", Toast.LENGTH_LONG).show();
 
-                        Intent i3 = new Intent(getApplicationContext(), ChatActivity.class);
+                        Intent i3 = new Intent(getApplicationContext(), ChatList.class);
                         startActivity(i3);
                         return true;
                     case R.id.i_profile:

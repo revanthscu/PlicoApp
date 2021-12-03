@@ -77,7 +77,9 @@
         <entry key="app/src/main/res/drawable/ic_menu_send.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_share.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/incoming_speech_bubble.xml" value="0.2671875" />
         <entry key="app/src/main/res/drawable/like_border.xml" value="0.37222222222222223" />
+        <entry key="app/src/main/res/drawable/outgoing_speech_bubble.xml" value="0.2671875" />
         <entry key="app/src/main/res/drawable/round_button_with_border.xml" value="0.37222222222222223" />
         <entry key="app/src/main/res/drawable/rounded_corner_layout.xml" value="0.37222222222222223" />
         <entry key="app/src/main/res/drawable/rounded_edittext.xml" value="0.37222222222222223" />
@@ -92,6 +94,7 @@
         <entry key="app/src/main/res/layout/activity_btn_dislike.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_btn_like.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.15648148148148147" />
+        <entry key="app/src/main/res/layout/activity_chatlist.xml" value="0.3188405797101449" />
         <entry key="app/src/main/res/layout/activity_chatscreen.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_edit_profile_old.xml" value="0.26666666666666666" />

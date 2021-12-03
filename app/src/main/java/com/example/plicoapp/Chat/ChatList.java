@@ -1,4 +1,4 @@
-package com.example.plicoapp.Matching;
+package com.example.plicoapp.Chat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,11 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.plicoapp.Chat.ChatActivity;
-import com.example.plicoapp.Chat.ChatList;
+import com.example.plicoapp.Matching.Cards;
+import com.example.plicoapp.Matching.MainActivity;
+import com.example.plicoapp.Matching.MatchUserAdapter;
+import com.example.plicoapp.Matching.Matched_Activity;
+import com.example.plicoapp.Matching.ViewOtherUserProfileActivity;
 import com.example.plicoapp.ProfileSetting.MyProfileActivity;
 import com.example.plicoapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,13 +37,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class Matched_Activity extends AppCompatActivity {
+public class ChatList extends AppCompatActivity {
 
     private static final String TAG = "Matched_Activity";
     private static final int ACTIVITY_NUM = 2;
     List<Cards> matchList = new ArrayList<>();
     List<Cards> copyList = new ArrayList<>();
-    private Context mContext = Matched_Activity.this;
+    private Context mContext = ChatList.this;
     private String userId, userSex, lookforSex, myUid;
     private double latitude = 37.349642;
     private double longtitude = -121.938987;
@@ -56,7 +60,7 @@ public class Matched_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_matched);
+        setContentView(R.layout.activity_chatlist);
         searchFunc();
 
         setMenu();
@@ -141,26 +145,8 @@ public class Matched_Activity extends AppCompatActivity {
             @Override
             public void onItemClick(Cards item) {
 
-                ArrayList<String> commonInterests = new ArrayList<String>();
 
-                commonInterests = (ArrayList<String>) myCard.getInterest().stream().filter(item.getInterest()::contains).collect(Collectors.toList());
-
-                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
-
-
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("UID", item.getUserId());
-                bundle2.putString("NAME", item.getName());
-                bundle2.putInt("AGE", item.getAge());
-                bundle2.putString("PICTURE", item.getProfileImageUrl());
-                bundle2.putString("BIO", item.getBio());
-                bundle2.putStringArrayList("INTERESTS", commonInterests);
-                bundle2.putInt("DISTANCE", item.getDistance());
-
-
-                Intent i = new Intent(mContext, ViewOtherUserProfileActivity.class);
-
-                i.putExtras(bundle2);
+                Intent i = new Intent(mContext, ChatActivity.class);
                 startActivity(i);
             }
         });
